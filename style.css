@@ -85,19 +85,19 @@ body {
 
 .hero {
   min-height: 100vh;
-  background: url('../imagens/teste4.png') center/cover no-repeat !important;
+  background: url('imagens/teste4.png') center/cover no-repeat !important;
 }
 
 .skills-section {
   height: 100vh;
   overflow: hidden;
-  background: url('../imagens/curriculo-baixo-3.png') center/cover no-repeat !important;
+  background: url('imagens/curriculo-baixo-3.png') center/cover no-repeat !important;
 }
 
 .education-section {
   height: 100vh;
   width: 100vw;
-  background: url('../imagens/imagem.baixo.png') top/cover no-repeat !important;
+  background: url('imagens/imagem.baixo.png') top/cover no-repeat !important;
 }
 
 
@@ -106,7 +106,7 @@ body {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background: url('../imagens/imagem.baixo.png') top/cover no-repeat !important;
+  background: url('imagens/imagem.baixo.png') top/cover no-repeat !important;
   display: flex;
   justify-content: center;
   align-items: center;
