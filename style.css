@@ -1,0 +1,467 @@
+@import url("https://fonts.googleapis.com/css2?family=Inria+Serif:wght@300;400;700&family=Merriweather:wght@400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+/* ============ ANIMAÇÕES ============ */
+/* Entrada ao carregar a página (hero) */
+.fade-in-down {
+  animation: fadeInDown 0.8s ease both;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Entrada ao rolar a página */
+.animate-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.animate-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============ NAVBAR ============ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 10px;
+  background: linear-gradient(
+    to right,
+    #332419b9,
+    #1d19168e,
+    #3d312b18,
+    #a58578a4
+  );
+  backdrop-filter: blur(8px);
+}
+
+.navbar-logo {
+  font-family: "Merriweather", serif;
+  font-weight: 900;
+  font-size: 24px;
+  color: #fff7f7;
+  letter-spacing: 2px;
+  position: absolute;
+  left: 30px;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 90px;
+}
+
+.navbar-links a {
+  font-family:"Press Start 2P", cursive;
+  font-size: 15px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: #c9a98a;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ============ PAGE SECTIONS ============ */
+.page-section {
+  width: 100%;
+}
+
+.hero {
+  min-height: 100vh;
+  background: url('../imagens/teste4.png') center/cover no-repeat !important;
+}
+
+.skills-section {
+  height: 100vh;
+  overflow: hidden;
+  background: url('../imagens/curriculo-baixo-3.png') center/cover no-repeat !important;
+}
+
+.education-section {
+  height: 100vh;
+  width: 100vw;
+  background: url('../imagens/imagem.baixo.png') top/cover no-repeat !important;
+}
+
+
+
+.contact-section {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: url('../imagens/imagem.baixo.png') top/cover no-repeat !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-section .page-layout {
+  justify-content: center;
+}
+
+.contact-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.meu-nome {
+  width: 794px;
+  height: 97px;
+}
+
+.meu-nome .text-wrapper {
+  position: absolute;
+  top: 88px;
+  left: 69px;
+  width: 794px;
+  font-family: "Merriweather", serif;
+  font-weight: 900;
+  color: #463d3d00;
+  font-size: 70px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.sobre-mim {
+  height: 91px;
+}
+
+.sobre-mim .text-wrapper {
+  position: absolute;
+  top: 150px;
+  left: 100px;
+  font-family: "Press Start 2P", cursive;
+  font-weight: 300;
+  color: #7a746b;
+  font-size: 50px;
+ 
+}
+.meu-nome2 {
+  position: absolute;
+  top: 400px;
+  left: 90px;
+  height: 230px;
+  width: 782px;
+  font-family: "Inria Serif", serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 40px;
+  color: #ffffffb9;
+  background: linear-gradient(
+    to right,
+    #201a18d8,
+    #3a302c48,
+    #72625a18,
+    #a5857813
+  );
+  border-radius: 22px;
+  padding: 30px 34px;
+  box-sizing: border-box;
+}
+
+.habilidades1 {
+  position: absolute;
+  width: 667px;
+  height: 88px;
+}
+
+.habilidades1 .text-wrapper {
+  position: relative;
+  top: 47px;
+  left: 650px;
+  width: 667px;
+  font-family: "Press Start 2P", cursive;
+  font-weight: 400;
+  color: #3e1b1b;
+  font-size: 50px;
+}
+
+.page-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px 40px;
+}
+
+.education-layout {
+  justify-content: center;
+  gap: 80px;
+  align-items: flex-end;
+  padding-bottom: 160px;
+}
+
+.page-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.page-box1,
+.page-box2 {
+  padding: 20px 30px;
+  background: linear-gradient(
+    to right,
+    #1f1815b0,
+    #27191469,
+    #41342e42,
+    #a5857813
+  );
+  border-radius: 26px;
+  align-self: flex-start;
+  margin-top: 220px;
+}
+
+.page-box2 {
+  margin-left: auto;
+  margin-right: 40px;
+}
+
+.page-box1 {
+  margin-left: 30px;
+}
+
+.page-list {  
+  padding-left: 24px;
+}
+
+.page-list li {
+  font-family: "Inria Serif", serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 90px;
+}
+
+.page-box2 .page-list li {
+  font-size: 20px;
+  line-height:60px ;
+}
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.skill-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ============ IMAGENS ============ */
+.tech-icon {
+  object-fit: contain;
+  position: relative;
+}
+
+/* Ajuste individual de cada imagem — altere top/left/width/height conforme quiser */
+.tech-icon[alt="HTML5"] {
+  width: 120px;
+  height: 120px;
+  top: 0px;
+  left: 10px;
+}
+
+.tech-icon[alt="CSS3"] {
+  width: 120px;
+  height: 120px;
+  top: 0px;
+  left: 30px;
+}
+
+.tech-icon[alt="JavaScript"] {
+  width: 220px;
+  height: 120px;
+  top: 0px;
+  left: 0px;
+}
+
+.tech-icon[alt="Java"] {
+  width: 220px;
+  height: 120px;
+  top: 0px;
+  right:0px;
+}
+
+.tech-icon[alt="Figma"] {
+  width: 230px;
+  height: 150px;
+  top: 10px;
+  right:60px;
+}
+
+
+.education-logo {
+  width: 280px;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 26px;
+}
+
+.education-logo[alt="Colégio Objetivo"] {
+  width: 350px;
+  height: 210px;
+  border-radius: 26px;
+  object-fit: cover;
+  position: relative;
+  top: -30px;
+}
+
+.education-logo[alt="Universidade São Judas Tadeu"] {
+  border-radius: 30%;
+  width: 400px;
+  height: 280px;
+}
+
+.education-title {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: "Press Start 2P", cursive;
+  font-size: 60px;
+  color: #3e1b1b;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.education-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 40px 60px 40px;
+  width: 550px;
+  font-family: "Inria Serif", serif;
+  background:linear-gradient(
+    to right,
+    #332c29b0,
+    #27191469,
+    #41342e42,
+    #a5857813
+  );
+  border-radius: 26px;
+  color: #ffffff;
+}
+
+.page-left .education-box {
+  width: 630px;
+  padding-top: 110px;
+}
+
+
+.education-text p,
+.education-text li {
+  font-family: "Inria Serif", serif;
+  font-size: 16px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 34px;
+  list-style: none;
+}
+
+.education-text li::before {
+  content: "• ";
+}
+
+.education-text ul {
+  padding-left: 0;
+}
+
+.education-text li.education-note {
+  color: #c4c4c4;
+  font-size: 14px;
+}
+
+
+.contato1 {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: "Press Start 2P", cursive;
+  font-weight: 400;
+  color: #3e1b1b;
+  font-size: 60px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px 50px;
+  border-radius: 20px;
+  background: linear-gradient(
+    to right,
+    #1f1815b0,
+    #27191469,
+    #41342e42,
+    #a5857813
+  );
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  font-family: "Inria Serif", serif;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.contact-item a {
+  color: #d4a57a;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+
