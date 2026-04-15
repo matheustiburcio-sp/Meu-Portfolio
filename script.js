@@ -16,4 +16,20 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".animate-scroll, .animate-hero").forEach((el) => {
     observer.observe(el);
   });
+
+  // === MENU HAMBURGER ===
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".navbar-links");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+    hamburger.classList.toggle("open");
+  });
+
+  // Fecha o menu ao clicar em um link
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+    });
+  });
 });
