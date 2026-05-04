@@ -47,6 +47,8 @@ const navbar = document.getElementById("navbar");
 const btnPrev = document.getElementById("btnPrev");
 const btnNext = document.getElementById("btnNext");
 const content = document.getElementById("content");
+let isTouchScrolling = false;
+let touchStartY = 0;
 
 function resetNavLinks() {
     Object.keys(navLinks).forEach((key) => {
@@ -75,6 +77,10 @@ function navigateTo(id) {
 }
 
 function nextSection() {
+    if (isTouchScrolling) {
+        return;
+    }
+
     if (currentIndex < sections.length - 1) {
         currentIndex += 1;
         updateView(true);
@@ -82,6 +88,10 @@ function nextSection() {
 }
 
 function prevSection() {
+    if (isTouchScrolling) {
+        return;
+    }
+
     if (currentIndex > 0) {
         currentIndex -= 1;
         updateView(true);
@@ -170,5 +180,35 @@ document.addEventListener("keydown", (event) => {
         prevSection();
     }
 });
+
+content.addEventListener(
+    "touchstart",
+    (event) => {
+        touchStartY = event.changedTouches[0].screenY;
+        isTouchScrolling = false;
+    },
+    { passive: true }
+);
+
+content.addEventListener(
+    "touchmove",
+    (event) => {
+        const touchY = event.changedTouches[0].screenY;
+        if (Math.abs(touchStartY - touchY) > 8) {
+            isTouchScrolling = true;
+        }
+    },
+    { passive: true }
+);
+
+content.addEventListener(
+    "touchend",
+    () => {
+        window.setTimeout(() => {
+            isTouchScrolling = false;
+        }, 140);
+    },
+    { passive: true }
+);
 
 updateView(false);

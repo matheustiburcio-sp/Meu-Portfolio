@@ -17,6 +17,8 @@
 
 html,
 body {
+    width: 100%;
+    min-height: 100dvh;
     height: 100%;
     overflow: hidden;
     background:
@@ -34,8 +36,9 @@ body {
 }
 
 .app-shell {
-    width: 100%;
+    width: 100vw;
     max-width: 100%;
+    min-height: 100dvh;
     height: 100vh;
     height: 100dvh;
     max-height: none;
@@ -47,8 +50,22 @@ body {
 }
 
 @supports (height: 100svh) {
+    html,
+    body,
     .app-shell {
+        min-height: 100svh;
         height: 100svh;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .app-shell {
+        width: 100vw;
+        min-height: 100dvh;
+        height: 100dvh;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
     }
 }
 
