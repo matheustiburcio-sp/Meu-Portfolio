@@ -1,16 +1,31 @@
 # Meu Portfolio
 
-Portfolio pessoal com layout responsivo para desktop e mobile em um unico projeto.
+Portfolio pessoal com versao mobile e desktop no mesmo projeto, com troca automatica de layout por breakpoint.
 
-## Sobre
+## Demo
 
-Este projeto apresenta minhas informacoes profissionais, habilidades, educacao, contato e projetos.
+- Site publicado: https://matheustiburcio-sp.github.io/Meu-Portfolio/
+- Repositorio: https://github.com/matheustiburcio-sp/Meu-Portfolio
 
-- Layout mobile com navegacao por secoes (home, skills, education, contact, projects)
-- Layout desktop com secoes em scroll e animacoes de entrada
-- Breakpoint responsivo para alternar automaticamente entre versoes
+## Visao Geral
 
-## Tecnologias
+Este portfolio apresenta:
+
+- Apresentacao pessoal
+- Habilidades tecnicas e comportamentais
+- Formacao academica
+- Projetos
+- Contatos
+
+## Destaques
+
+- Mobile first
+- Layout desktop integrado na mesma base
+- Navegacao por secoes no mobile
+- Scroll por ancoras no desktop
+- Animacoes de entrada com IntersectionObserver
+
+## Stack
 
 - HTML5
 - CSS3
@@ -18,27 +33,42 @@ Este projeto apresenta minhas informacoes profissionais, habilidades, educacao, 
 - Font Awesome
 - Google Fonts
 
-## Estrutura
-
-- `index.html`: estrutura principal com layout mobile e desktop
-- `styles.css`: estilos mobile e desktop (com media queries)
-- `script.js`: logica de navegacao mobile e animacoes desktop
-- `assets/images/`: imagens utilizadas no projeto
-
 ## Responsividade
 
-- Mobile first
-- Desktop ativo em telas maiores (breakpoint em 900px)
+- Breakpoint principal: 900px
+- Abaixo de 900px: interface mobile
+- A partir de 900px: interface desktop
 
-## Como executar localmente
+## Estrutura do Projeto
 
-1. Baixe ou clone o repositorio
-2. Abra o arquivo `index.html` no navegador
+- index.html: estrutura principal com layout mobile e desktop
+- styles.css: estilos mobile + desktop com media queries
+- script.js: logica de navegacao mobile e animacoes desktop
+- assets/images/: imagens do projeto
 
-Opcional: use um servidor local para melhor experiencia de teste.
+## Como Rodar Localmente
+
+1. Clone o repositorio:
+
+	git clone https://github.com/matheustiburcio-sp/Meu-Portfolio.git
+
+2. Entre na pasta do projeto:
+
+	cd Meu-Portfolio
+
+3. Abra o arquivo index.html no navegador
+
+Opcional: rode com servidor local para uma experiencia melhor de teste.
+
+## Proximos Passos
+
+- Adicionar secao de experiencia profissional
+- Adicionar cards de projetos reais com links diretos
+- Incluir screenshot/gif no README
+- Melhorar acessibilidade (contraste, foco e navegacao por teclado)
 
 ## Contato
 
 - GitHub: https://github.com/matheustiburcio-sp
 - Email: matheus.tiburzio@gmail.com
-- Portfolio: https://matheustiburcio-sp.github.io/Meu-Portfolio/
+- LinkedIn: (adicionar link)
