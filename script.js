@@ -161,35 +161,6 @@ function updateView(animate) {
     content.scrollTop = 0;
 }
 
-let touchStartY = 0;
-
-content.addEventListener(
-    "touchstart",
-    (event) => {
-        touchStartY = event.changedTouches[0].screenY;
-    },
-    { passive: true }
-);
-
-content.addEventListener(
-    "touchend",
-    (event) => {
-        const touchEndY = event.changedTouches[0].screenY;
-        const diff = touchStartY - touchEndY;
-
-        if (Math.abs(diff) <= 60) {
-            return;
-        }
-
-        if (diff > 0) {
-            nextSection();
-        } else {
-            prevSection();
-        }
-    },
-    { passive: true }
-);
-
 document.addEventListener("keydown", (event) => {
     if (event.key === "ArrowRight" || event.key === "ArrowDown") {
         nextSection();
