@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Matheus Tiburcio - Portfólio</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Press+Start+2P&family=Space+Mono:wght@400;700&family=Inria+Serif:wght@300;400;700&family=Merriweather:wght@400;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div class="app-shell">
+		<div class="app-notch"></div>
+
+		<nav class="top-nav" id="navbar">
+			<button class="nav-icon-btn nav-back-btn" id="backBtn" onclick="goBack()" aria-label="Voltar">
+				<i class="fas fa-arrow-left"></i>
+			</button>
+			<button class="nav-icon-btn nav-home-btn" id="homeBtn" onclick="showSection('home')" aria-label="Ir para home">
+				<i class="fas fa-home"></i>
+			</button>
+			<a id="nav-education" onclick="navigateTo('education')">(educação)</a>
+			<a id="nav-contact" onclick="navigateTo('contact')">(contact)</a>
+			<a id="nav-projects" onclick="navigateTo('projects')">(projects)</a>
+		</nav>
+
+		<div class="main-content" id="content">
+			<section class="page-section active" id="home">
+				<h1 class="hero-title">
+					<span>FRONT-END</span>
+					<span>DEV</span>
+				</h1>
+
+				<img src="assets/eu.png" alt="Matheus Tiburcio" class="hero-avatar">
+
+				<div class="profile-name">MATHEUS TIBURCIO</div>
+				<div class="profile-subtitle">Sobre mim:</div>
+
+				<div class="about-card">
+					<p>
+						Meu nome é Matheus Tiburcio Araújo. Meu sonho é me especializar na área de ADS,
+						adquirir mais experiência profissional e construir uma carreira sólida, entregando
+						produtos com a maior qualidade possível para cada cliente.
+					</p>
+				</div>
+			</section>
+
+			<section class="page-section" id="skills">
+				<div class="section-header">
+					<div class="section-badge">HABILIDADES:</div>
+				</div>
+
+				<div class="info-card">
+					<ul>
+						<li>Trabalho em equipe</li>
+						<li>Organização</li>
+						<li>Capacidade de trabalhar sob pressão</li>
+						<li>Pensamento lógico</li>
+						<li>Resolução de problemas</li>
+						<li>Comunicação</li>
+					</ul>
+				</div>
+
+				<div class="info-card">
+					<ul>
+						<li>HTML <i class="fab fa-html5 skill-tech-icon" style="color: #e34f26;"></i></li>
+						<li>CSS <i class="fab fa-css3-alt skill-tech-icon" style="color: #264de4;"></i></li>
+						<li>JavaScript (básico) <i class="fab fa-js skill-tech-icon" style="color: #f7df1e;"></i></li>
+						<li>Lógica de programação</li>
+						<li>Java <i class="fab fa-java skill-tech-icon" style="color: #f89820;"></i></li>
+						<li>Git e GitHub <i class="fab fa-github skill-tech-icon" style="color: #fff;"></i></li>
+						<li>Desenvolvimento web básico</li>
+						<li>Noções de API</li>
+						<li>Responsividade para mobile <i class="fab fa-figma skill-tech-icon" style="color: #f24e1e;"></i></li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="page-section" id="education">
+				<div class="section-header">
+					<div class="section-badge">EDUCAÇÃO:</div>
+				</div>
+
+				<div class="info-card education-card">
+					<img
+						src="assets/images/sao.judas.webp"
+						alt="Universidade São Judas Tadeu"
+						class="education-image"
+					>
+					<div class="education-name">• Universidade São Judas Tadeu</div>
+					<div class="education-detail">• Conclusão - 2028 (ADS)</div>
+				</div>
+
+				<div class="info-card education-card">
+					<div class="education-logo-box">
+						<img src="assets/images/colegio.objetivo.webp" alt="Colégio Objetivo" class="education-logo-image">
+					</div>
+					<div class="education-name">• Instituição de conclusão do ensino fundamental e médio</div>
+					<div class="education-detail">• Objetivo (Carapicuíba)</div>
+				</div>
+			</section>
+
+			<section class="page-section" id="contact">
+				<div class="section-header">
+					<div class="section-badge">CONTACT:</div>
+				</div>
+
+				<div class="contact-links">
+					<a href="https://wa.me/5511964159465" target="_blank" rel="noopener noreferrer" class="contact-link">
+						<div class="contact-link-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
+						<div class="contact-link-text"><strong>Telefone:</strong> (11) 96415-9465</div>
+					</a>
+
+					<a href="mailto:matheus.tiburzio@gmail.com" class="contact-link">
+						<div class="contact-link-icon email"><i class="fas fa-envelope"></i></div>
+						<div class="contact-link-text"><strong>Email:</strong> matheus.tiburzio@gmail.com</div>
+					</a>
+
+					<a href="https://github.com/matheustiburcio-sp" target="_blank" rel="noopener noreferrer" class="contact-link">
+						<div class="contact-link-icon github"><i class="fab fa-github"></i></div>
+						<div class="contact-link-text"><strong>GitHub:</strong> github.com/matheustiburcio-sp</div>
+					</a>
+
+					<a href="#" target="_blank" rel="noopener noreferrer" class="contact-link">
+						<div class="contact-link-icon linkedin"><i class="fab fa-linkedin-in"></i></div>
+						<div class="contact-link-text"><strong>LinkedIn:</strong> Matheus Tiburcio LinkedIn</div>
+					</a>
+
+					<a href="#" target="_blank" rel="noopener noreferrer" class="contact-link">
+						<div class="contact-link-icon instagram"><i class="fab fa-instagram"></i></div>
+						<div class="contact-link-text"><strong>Instagram:</strong> @seuusuario</div>
+					</a>
+				</div>
+			</section>
+
+			<section class="page-section" id="projects">
+				<div class="section-header">
+					<div class="section-badge">PROJECTS:</div>
+				</div>
+
+				<div class="projects-list">
+					<div class="project-item">
+						<div class="project-thumb">
+							<i class="fas fa-code" style="font-size: 28px; opacity: 0.25;"></i>
+						</div>
+						<div class="project-details">
+							<h3>Em breve</h3>
+							<p>Seu primeiro projeto estará aqui em breve.</p>
+							<span class="project-tag">HTML</span>
+							<span class="project-tag">CSS</span>
+						</div>
+					</div>
+
+					<div class="project-item">
+						<div class="project-thumb">
+							<i class="fas fa-rocket" style="font-size: 28px; opacity: 0.25;"></i>
+						</div>
+						<div class="project-details">
+							<h3>Portfólio pessoal</h3>
+							<p>Este site que você está vendo agora.</p>
+							<span class="project-tag">Responsive</span>
+							<span class="project-tag">Mobile First</span>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<div class="nav-actions" id="navButtons">
+			<button class="nav-action-btn" id="btnPrev" onclick="prevSection()">VOLTAR</button>
+			<button class="nav-action-btn" id="btnNext" onclick="nextSection()">AVANÇAR</button>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+
+	<!-- ===== LAYOUT PC (visível apenas em ≥ 900px) ===== -->
+	<div class="pc-layout">
+		<nav class="pc-navbar">
+			<span class="pc-navbar-logo">Matheus Tiburcio Araujo</span>
+			<ul class="pc-navbar-links">
+				<li><a href="#pc-hero">Inicio</a></li>
+				<li><a href="#pc-habilidades">Habilidades</a></li>
+				<li><a href="#pc-projetos">Projetos</a></li>
+				<li><a href="#pc-educacao">Educacao</a></li>
+				<li><a href="#pc-contato">Contato</a></li>
+			</ul>
+		</nav>
+
+		<section class="pc-section pc-hero" id="pc-hero">
+			<div class="pc-meu-nome animate-hero"><div class="text-wrapper">MATHEUS TIBURCIO</div></div>
+			<div class="pc-sobre-mim animate-hero"><div class="text-wrapper">Sobre mim:</div></div>
+			<div class="pc-meu-nome2 animate-hero">
+				<p>Sou estudante de Analise e Desenvolvimento de Sistemas, com foco em desenvolvimento front-end responsivo. Gosto de transformar ideias em interfaces funcionais, acessiveis e com boa experiencia para o usuario, sempre buscando codigo limpo e evolucao continua.</p>
+			</div>
+			<div class="pc-hero-actions animate-hero">
+				<a class="pc-btn-primary" href="#pc-projetos">Ver projetos</a>
+				<a class="pc-btn-secondary" href="#pc-contato">Fale comigo</a>
+			</div>
+		</section>
+
+		<section class="pc-section pc-skills-section" id="pc-habilidades">
+			<div class="pc-habilidades1 animate-scroll"><div class="text-wrapper">HABILIDADES:</div></div>
+			<div class="pc-page-layout">
+				<div class="pc-page-left">
+					<div class="pc-page-box1 animate-scroll">
+						<ul class="pc-page-list">
+							<li>Trabalho em equipe</li>
+							<li>Organizacao</li>
+							<li>Capacidade de trabalhar sob pressao</li>
+							<li>Pensamento logico</li>
+							<li>Resolucao de problemas</li>
+							<li>Comunicacao</li>
+						</ul>
+					</div>
+				</div>
+				<div class="pc-page-center">
+					<div class="pc-skill-card animate-scroll">
+						<div class="pc-skill-row">
+							<img src="assets/images/html5k.webp" alt="HTML5" class="pc-tech-icon" />
+							<img src="assets/images/css4k.webp" alt="CSS3" class="pc-tech-icon" />
+							<img src="assets/images/java4k.webp" alt="JavaScript" class="pc-tech-icon" />
+						</div>
+						<div class="pc-skill-row">
+							<img src="assets/images/java.png" alt="Java" class="pc-tech-icon" />
+							<img src="assets/images/figma.png" alt="Figma" class="pc-tech-icon" />
+						</div>
+					</div>
+				</div>
+				<div class="pc-page-right">
+					<div class="pc-page-box2 animate-scroll">
+						<ul class="pc-page-list">
+							<li>HTML</li>
+							<li>CSS</li>
+							<li>JavaScript</li>
+							<li>Java</li>
+							<li>Figma</li>
+							<li>Logica de programacao</li>
+							<li>Git e GitHub</li>
+							<li>Desenvolvimento Web</li>
+							<li>Nocoes de APIs</li>
+							<li>Responsividade web</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="pc-section pc-projects-section animate-scroll" id="pc-projetos">
+			<div class="pc-projects-title"><span>PROJETOS:</span></div>
+			<div class="pc-projects-grid">
+				<article class="pc-project-card">
+					<h3>Portfolio Profissional</h3>
+					<p>Site pessoal com foco em identidade visual, navegacao simples, animacoes de entrada e layout responsivo para desktop e celular.</p>
+					<div class="pc-project-tags">
+						<span>HTML</span><span>CSS</span><span>JavaScript</span>
+					</div>
+					<div class="pc-project-links">
+						<a href="https://matheustiburcio-sp.github.io/Meu-Portfolio/" target="_blank" rel="noopener noreferrer">Ver online</a>
+						<a href="https://github.com/matheustiburcio-sp/Meu-Portfolio" target="_blank" rel="noopener noreferrer">Codigo</a>
+					</div>
+				</article>
+				<article class="pc-project-card">
+					<h3>Landing Page Responsiva</h3>
+					<p>Pagina institucional com hierarquia visual clara, componentes reutilizaveis e ajuste de layout para diferentes resolucoes.</p>
+					<div class="pc-project-tags">
+						<span>HTML</span><span>CSS</span><span>UI/UX</span>
+					</div>
+					<div class="pc-project-links">
+						<a href="https://github.com/matheustiburcio-sp" target="_blank" rel="noopener noreferrer">Ver repositorios</a>
+					</div>
+				</article>
+				<article class="pc-project-card">
+					<h3>Desafios de Logica e Front-end</h3>
+					<p>Exercicios e pequenos projetos para praticar estrutura de paginas, manipulacao de elementos e boas praticas de desenvolvimento.</p>
+					<div class="pc-project-tags">
+						<span>JavaScript</span><span>Git</span><span>GitHub</span>
+					</div>
+					<div class="pc-project-links">
+						<a href="https://github.com/matheustiburcio-sp" target="_blank" rel="noopener noreferrer">Ver GitHub</a>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section class="pc-section pc-education-section animate-scroll" id="pc-educacao">
+			<div class="pc-education-title"><span>Educacao:</span></div>
+			<div class="pc-page-layout pc-education-layout">
+				<div class="pc-page-left">
+					<div class="pc-page-box pc-education-box">
+						<img src="assets/images/colegio.objetivo.webp" alt="Colegio Objetivo" class="pc-education-logo" />
+						<div class="pc-education-text">
+							<ul>
+								<li><strong>Instituicao de conclusao do ensino fundamental e ensino medio</strong></li>
+								<li class="pc-education-note">Objetivo (Carapicuiba)</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="pc-page-center"></div>
+				<div class="pc-page-right">
+					<div class="pc-page-box pc-education-box pc-education-box-2">
+						<img src="assets/images/sao.judas.webp" alt="Universidade Sao Judas Tadeu" class="pc-education-logo" />
+						<div class="pc-education-text">
+							<ul>
+								<li><strong>Universidade Sao Judas Tadeu</strong></li>
+								<li><strong>Conclusao - 2028 (ADS)</strong></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="pc-section pc-contact-section animate-scroll" id="pc-contato">
+			<div class="pc-contato1">CONTATO:</div>
+			<div class="pc-page-layout">
+				<div class="pc-page-left"></div>
+				<div class="pc-page-center">
+					<div class="pc-page-box pc-contact-box">
+						<div class="pc-contact-item">
+							<img src="assets/images/telefone.webp" alt="Telefone" class="pc-contact-icon" />
+							<p><strong>Telefone:</strong> <a href="tel:+5511964159465">(11)96415-9465</a></p>
+						</div>
+						<div class="pc-contact-item">
+							<img src="assets/images/gmail.png" alt="Email" class="pc-contact-icon" />
+							<p><strong>Email:</strong> <a href="mailto:matheus.tiburzio@gmail.com">matheus.tiburzio@gmail.com</a></p>
+						</div>
+						<div class="pc-contact-item">
+							<img src="assets/images/github.png" alt="GitHub" class="pc-contact-icon" />
+							<p><strong>GitHub:</strong> <a href="https://github.com/matheustiburcio-sp" target="_blank" rel="noopener noreferrer">github.com/matheustiburcio-sp</a></p>
+						</div>
+						<div class="pc-contact-item">
+							<img src="assets/images/github.png" alt="Portfolio" class="pc-contact-icon" />
+							<p><strong>Portfolio:</strong> <a href="https://matheustiburcio-sp.github.io/Meu-Portfolio/" target="_blank" rel="noopener noreferrer">matheustiburcio-sp.github.io/Meu-Portfolio</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="pc-page-right"></div>
+			</div>
+		</section>
+	</div>
+</body>
+</html>
