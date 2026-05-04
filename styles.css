@@ -59,6 +59,11 @@ body {
 }
 
 @media (hover: none) and (pointer: coarse) {
+    html,
+    body {
+        background: #1d1a15;
+    }
+
     .app-shell {
         width: 100vw;
         min-height: 100dvh;
@@ -96,7 +101,7 @@ body {
 }
 
 .top-nav.is-home {
-    background: #25211F;
+    background: transparent;
 }
 
 .top-nav .nav-icon-btn {
