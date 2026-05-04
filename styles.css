@@ -80,19 +80,6 @@ body {
     }
 }
 
-.app-notch {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 130px;
-    height: 32px;
-    background: #000;
-    border-bottom-left-radius: 18px;
-    border-bottom-right-radius: 18px;
-    z-index: 100;
-}
-
 .top-nav {
     display: flex;
     justify-content: center;
