@@ -441,6 +441,8 @@ img {
 .education-layout .page-left,
 .education-layout .page-right {
   flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 .education-title,
@@ -472,7 +474,7 @@ img {
 }
 
 .page-left .education-box {
-  width: 630px;
+  width: 550px;
 }
 
 .education-logo {
@@ -700,8 +702,8 @@ img {
   }
 
   .page-left .education-box {
-    width: min(560px, 100%);
-    padding-top: 80px;
+    width: min(500px, 100%);
+    padding-top: 30px;
   }
 }
 
