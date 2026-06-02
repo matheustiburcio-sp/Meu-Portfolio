@@ -432,6 +432,7 @@ img {
   justify-content: center;
   gap: 80px;
   align-items: center;
+  padding-top: 100px;
 }
 
 .education-layout .page-center {
@@ -829,7 +830,7 @@ img {
   .page-box1,
   .page-box2 {
     width: min(720px, 100%);
-    margin: 0;
+    margin: 10px;
     align-self: center;
   }
 
