@@ -564,6 +564,28 @@ body {
     font-size: 10px;
 }
 
+.project-links-mobile {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.project-links-mobile a {
+    padding: 4px 12px;
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    color: var(--accent);
+    font-family: "Space Mono", monospace;
+    font-size: 10px;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.project-links-mobile a:hover {
+    background: var(--accent);
+    color: #000;
+}
+
 @media (max-width: 360px) {
     .top-nav {
         gap: 18px;
