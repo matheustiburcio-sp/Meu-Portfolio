@@ -427,7 +427,8 @@ img {
   background: url("imagens/imagem.baixo.png") top/cover no-repeat;
 }
 
-.education-layout {
+.education-layout,
+.pc-education-layout {
   flex: 1;
   justify-content: center;
   gap: 80px;
