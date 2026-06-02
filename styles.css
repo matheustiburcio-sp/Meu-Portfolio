@@ -1033,6 +1033,7 @@ body {
         justify-content: center;
         gap: 80px;
         align-items: center;
+        padding-top: 100px;
     }
 
     .pc-education-layout .pc-page-center {
