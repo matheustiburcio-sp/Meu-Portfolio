@@ -3,7 +3,7 @@
     --bg-home: #1d1a15b0;
     --bg-card: #201b16;
     --text-primary: #dbc7b5;
-    --text-secondary: #ffffffd7;
+    --text-secondary: #ffffff;
     --accent: #c4b5a5;
     --border: #584b3e91;
 }
@@ -278,7 +278,7 @@ body {
 .profile-subtitle {
     margin-bottom: 18px;
     text-align: center;
-    color: var(--text-secondary);
+    color: rgb(255, 255, 255);
     font-size: 14px;
     font-weight: 400;
 }
@@ -293,7 +293,7 @@ body {
 .about-card p {
     font-size: 12.5px;
     line-height: 1.9;
-    color: var(--text-secondary);
+    color: rgb(255, 255, 255);
 }
 
 .section-header {
@@ -306,10 +306,10 @@ body {
     display: inline-block;
     margin-top: 20px;
     padding: 12px 28px;
-    border: 1px solid var(--border);
+    border: 1px solid rgba(255, 255, 255, 0.09);
     border-radius: 30px;
-    background: var(--bg-card);
-    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.02);
+    color: rgb(255, 255, 255);
     font-family: "Press Start 2P", "Space Mono", monospace;
     font-size: 14px;
     font-weight: 700;
@@ -319,7 +319,7 @@ body {
 .info-card {
     margin-bottom: 14px;
     padding: 18px 20px;
-    background: var(--bg-card);
+    background: rgba(255, 255, 255, 0.02);
     border: 1px solid var(--border);
     border-radius: 18px;
 }
@@ -336,7 +336,7 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
     font-size: 12.5px;
     line-height: 1.5;
-    color: var(--text-secondary);
+    color: rgb(255, 255, 255);
 }
 
 .info-card li:last-child {
@@ -946,7 +946,7 @@ body {
         left: 100px;
         font-family: var(--font-ui);
         font-weight: 300;
-        color: #7a746b;
+        color: #09c6ff;
         font-size: 50px;
     }
 
@@ -1261,7 +1261,7 @@ body {
     .pc-edu-desc {
         font-family: var(--font-body);
         font-size: 14px;
-        color: rgba(255, 255, 255, 0.65);
+        color: rgb(255, 255, 255);
         line-height: 1.65;
         margin: 0;
     }
@@ -1275,7 +1275,7 @@ body {
         background: rgba(255, 255, 255, 0.02);
         font-family: var(--font-body);
         font-size: 13px;
-        color: rgba(255, 255, 255, 0.55);
+        color: rgb(255, 255, 255);
     }
 
     .pc-edu-foot i {
@@ -1299,7 +1299,7 @@ body {
         width: min(1100px, 100%);
         font-family: var(--font-body);
         font-size: 15px;
-        color: rgba(255, 255, 255, 0.55);
+        color: rgb(255, 255, 255);
     }
 
     .pc-edu-quote i {
@@ -1316,6 +1316,7 @@ body {
     .pc-education-section .edu-section-subtitle {
         font-size: 17px;
         margin-top: 150px;
+        color: #ffffff;
     }
 
     .pc-education-section .edu-section-header {
