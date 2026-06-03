@@ -53,10 +53,6 @@ img {
 }
 
 /* ============ ESTRUTURA GERAL ============ */
-.page-section {
-  width: 100%;
-}
-
 .page-layout {
   display: flex;
   flex-direction: row;
@@ -98,7 +94,6 @@ img {
 
 .page-box1,
 .page-box2 {
-  padding: 20px 30px;
   background: var(--panel-strong);
   border-radius: 26px;
   align-self: flex-start;
@@ -107,6 +102,7 @@ img {
 }
 
 .page-box1 {
+  padding: 20px 30px;
   margin-left: 30px;
 }
 
@@ -171,11 +167,6 @@ img {
   background: url("imagens/teste4.png") center/cover no-repeat;
 }
 
-.meu-nome {
-  width: 794px;
-  height: 97px;
-}
-
 .meu-nome .text-wrapper {
   position: absolute;
   top: 88px;
@@ -187,16 +178,11 @@ img {
   font-size: 70px;
 }
 
-.sobre-mim {
-  height: 91px;
-}
-
 .sobre-mim .text-wrapper {
   position: absolute;
   top: 150px;
   left: 100px;
   font-family: var(--font-ui);
-  font-weight: 300;
   color: #7a746b;
   font-size: 50px;
 }
@@ -392,16 +378,6 @@ img {
   object-fit: contain;
 }
 
-.tech-icon[alt="HTML5"] {
-  width: 140px;
-  height: 140px;
-}
-
-.tech-icon[alt="CSS3"] {
-  width: 140px;
-  height: 140px;
-}
-
 .tech-icon[alt="JavaScript"] {
   width: 200px;
   height: 140px;
@@ -419,35 +395,201 @@ img {
 
 /* ============ EDUCACAO ============ */
 .education-section {
-  height: 100vh;
-  width: 100vw;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background: url("imagens/imagem.baixo.png") top/cover no-repeat;
-}
-
-.education-layout,
-.pc-education-layout {
-  flex: 1;
-  justify-content: center;
-  gap: 80px;
   align-items: center;
-  padding-top: 100px;
+  justify-content: center;
+  gap: 40px;
+  padding: 100px 60px 60px;
+  background:
+    linear-gradient(to bottom, rgba(10, 8, 6, 0.88) 0%, rgba(10, 8, 6, 0.92) 100%),
+    url("imagens/imagem.baixo.png") center/cover no-repeat;
+  background-color: #0d0b09;
 }
 
-.education-layout .page-center {
-  display: none;
+.edu-section-header {
+  text-align: center;
+  max-width: 680px;
 }
 
-.education-layout .page-left,
-.education-layout .page-right {
-  flex: 0 0 auto;
+.edu-section-title {
+  font-family: var(--font-ui);
+  font-size: 44px;
+  color: #d4c8bc;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.edu-section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #c4a46a, transparent);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.edu-section-subtitle {
+  font-family: var(--font-body);
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.65;
+}
+
+.edu-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  width: min(1200px, 100%);
+}
+
+.edu-card {
   display: flex;
+  flex-direction: column;
+  background: #1a1815;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+}
+
+.edu-card:hover {
+  transform: scale(1.02);
+  border-color: rgba(196, 164, 106, 0.35);
+  box-shadow: 0 8px 36px rgba(0, 0, 0, 0.65);
+}
+
+.edu-card-body {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.edu-card-image-wrap {
+  flex: 0 0 260px;
+  overflow: hidden;
+}
+
+.edu-card-image-wrap--logo {
+  background: #ffd700;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
-.education-title,
+.edu-card-img {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.edu-card-image-wrap--logo .edu-card-img {
+  object-fit: contain;
+  padding: 20px;
+}
+
+.edu-card-info {
+  flex: 1;
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edu-card-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(196, 164, 106, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c4a46a;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.edu-card-name {
+  font-family: var(--font-title);
+  font-size: 21px;
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.edu-card-type {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #c4a46a;
+  margin: 0;
+}
+
+.edu-card-rule {
+  width: 30px;
+  height: 2px;
+  background: #c4a46a;
+  border-radius: 1px;
+}
+
+.edu-card-desc {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.edu-card-foot {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.02);
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.edu-card-foot i {
+  color: #c4a46a;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.edu-foot-label {
+  color: #c4a46a;
+  font-weight: 600;
+}
+
+.edu-quote {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  width: min(1200px, 100%);
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.edu-quote i {
+  color: #c4a46a;
+  font-size: 26px;
+  flex-shrink: 0;
+}
+
 .contato1 {
   position: absolute;
   top: 90px;
@@ -462,66 +604,6 @@ img {
   pointer-events: none;
 }
 
-.education-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  width: 550px;
-  padding: 40px 60px;
-  border-radius: 26px;
-  background: linear-gradient(to right, #332c29b0, #27191469, #41342e42, #a5857813);
-  color: var(--color-white);
-  font-family: var(--font-body);
-}
-
-.page-left .education-box {
-  width: 550px;
-}
-
-.education-logo {
-  width: 280px;
-  height: 180px;
-  object-fit: contain;
-  border-radius: 26px;
-}
-
-.education-logo[alt="Colégio Objetivo"] {
-  position: relative;
-  top: -30px;
-  width: 350px;
-  height: 210px;
-  object-fit: cover;
-}
-
-.education-logo[alt="Universidade São Judas Tadeu"] {
-  width: 400px;
-  height: 280px;
-  border-radius: 30%;
-}
-
-.education-text p,
-.education-text li {
-  font-family: var(--font-body);
-  font-size: 16px;
-  color: var(--color-white);
-  text-align: center;
-  line-height: 34px;
-  list-style: none;
-}
-
-.education-text ul {
-  padding-left: 0;
-}
-
-.education-text li::before {
-  content: "• ";
-}
-
-.education-text li.education-note {
-  color: #c4c4c4;
-  font-size: 14px;
-}
 
 /* ============ CONTATO ============ */
 .contact-section {
@@ -549,7 +631,6 @@ img {
 
 .contact-item {
   display: flex;
-  flex-direction: row;
   align-items: center;
   gap: 14px;
   font-family: var(--font-body);
@@ -690,22 +771,31 @@ img {
   .tech-icon[alt="Figma"] {
     width: 180px;
     height: 112px;
-    right: 30px;
   }
 
   .education-layout {
-    gap: 36px;
+    gap: 32px;
     padding-bottom: 110px;
   }
 
-  .education-box {
-    width: min(500px, 100%);
-    padding: 30px 34px;
+  .edu-cards-grid {
+    gap: 18px;
   }
 
-  .page-left .education-box {
-    width: min(500px, 100%);
-    padding-top: 30px;
+  .edu-card-image-wrap {
+    flex: 0 0 210px;
+  }
+
+  .edu-card-img {
+    min-height: 210px;
+  }
+
+  .edu-section-title {
+    font-size: 36px;
+  }
+
+  .edu-section-subtitle {
+    font-size: 15px;
   }
 }
 
@@ -733,8 +823,8 @@ img {
     margin-top: 108px;
   }
 
-  .education-layout {
-    padding-bottom: 92px;
+  .education-section {
+    padding-top: 80px;
   }
 }
 
@@ -819,7 +909,6 @@ img {
   }
 
   .page-layout,
-  .education-layout,
   .contact-section .page-layout {
     flex-direction: column;
     align-items: center;
@@ -840,16 +929,35 @@ img {
     flex-wrap: wrap;
   }
 
-  .tech-icon {
-    top: auto;
-    left: auto;
-    right: auto;
+  .edu-cards-grid {
+    grid-template-columns: 1fr;
   }
 
-  .education-box,
-  .page-left .education-box {
-    width: min(720px, 100%);
-    padding-top: 32px;
+  .edu-card-body {
+    flex-direction: column;
+  }
+
+  .edu-card-image-wrap {
+    flex: none;
+    height: 200px;
+    width: 100%;
+  }
+
+  .edu-card-img {
+    min-height: 200px;
+  }
+
+  .edu-section-title {
+    font-size: 28px;
+  }
+
+  .edu-section-subtitle {
+    font-size: 14px;
+  }
+
+  .education-section {
+    padding: 80px 20px 40px;
+    gap: 28px;
   }
 
   .projects-title {

@@ -360,48 +360,177 @@ body {
     padding-bottom: 16px;
 }
 
-.education-image {
-    width: 100%;
-    height: 130px;
+/* ============ EDU CARD (novo design) ============ */
+.edu-section-header {
+    padding: 20px 0 14px;
+    text-align: center;
+}
+
+.edu-section-title {
+    font-family: "Press Start 2P", monospace;
+    font-size: 18px;
+    font-weight: 400;
+    color: #d4c8bc;
+    letter-spacing: 1px;
     margin-bottom: 14px;
+}
+
+.edu-section-title::after {
+    content: "";
     display: block;
-    object-fit: cover;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 14px;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(to right, #c4a46a, transparent);
+    margin: 8px auto 0;
+    border-radius: 1px;
 }
 
-.education-name {
-    margin-bottom: 4px;
-    text-align: center;
-    color: var(--text-secondary);
+.edu-section-subtitle {
     font-size: 12px;
-    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.7;
 }
 
-.education-detail {
-    text-align: center;
-    color: var(--text-secondary);
-    font-size: 11px;
-    opacity: 0.7;
-}
-
-.education-logo-box {
-    height: 140px;
-    margin-bottom: 14px;
+.edu-cards-list {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    background: #ffd700;
-    border-radius: 14px;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 14px;
 }
 
-.education-logo-image {
+.edu-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+.edu-card:hover {
+    transform: scale(1.02);
+    border-color: rgba(196, 164, 106, 0.35);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.6);
+}
+
+.edu-card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.edu-card-image-wrap {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.edu-card-image-wrap--logo {
+    background: #ffd700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edu-card-img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
     display: block;
+}
+
+.edu-card-image-wrap--logo .edu-card-img {
     object-fit: contain;
+    padding: 14px;
+}
+
+.edu-card-info {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.edu-card-badge {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(196, 164, 106, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c4a46a;
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.edu-card-name {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    line-height: 1.25;
+    margin: 0;
+}
+
+.edu-card-type {
+    font-size: 11.5px;
+    color: #c4a46a;
+    margin: 0;
+}
+
+.edu-card-rule {
+    width: 24px;
+    height: 2px;
+    background: #c4a46a;
+    border-radius: 1px;
+}
+
+.edu-card-desc {
+    font-size: 11.5px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.65;
+    margin: 0;
+}
+
+.edu-card-foot {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.02);
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.edu-card-foot i {
+    color: #c4a46a;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.edu-foot-label {
+    color: #c4a46a;
+    font-weight: 600;
+}
+
+.edu-quote {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 6px;
+}
+
+.edu-quote i {
+    color: #c4a46a;
+    font-size: 22px;
+    flex-shrink: 0;
 }
 
 .contact-links {
@@ -1020,32 +1149,182 @@ body {
 
     /* ---- Educação ---- */
     .pc-education-section {
-        height: 100vh;
-        width: 100vw;
+        position: relative;
+        min-height: 100vh;
+        width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        background: url("assets/images/imagem.baixo.png") top/cover no-repeat;
-    }
-
-    .pc-education-layout {
-        flex: 1;
-        justify-content: center;
-        gap: 80px;
         align-items: center;
-        padding-top: 100px;
+        justify-content: center;
+        gap: 40px;
+        padding: 80px 60px 60px;
+        background: url("assets/images/imagem.baixo.png") top/cover no-repeat;
+        opacity: 1 !important;
+        transform: none !important;
     }
 
-    .pc-education-layout .pc-page-center {
-        display: none;
+    .pc-edu-cards-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        width: min(1100px, 100%);
     }
 
-    .pc-education-layout .pc-page-left,
-    .pc-education-layout .pc-page-right {
-        flex: 0 0 auto;
+    .pc-edu-card {
+        display: flex;
+        flex-direction: column;
+        background: #1a1815;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 16px;
+        overflow: hidden;
+        transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
     }
 
-    .pc-education-title,
+    .pc-edu-card:hover {
+        transform: scale(1.02);
+        border-color: rgba(196, 164, 106, 0.35);
+        box-shadow: 0 8px 36px rgba(0, 0, 0, 0.65);
+    }
+
+    .pc-edu-card-body {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+    }
+
+    .pc-edu-img-wrap {
+        flex: 0 0 260px;
+        overflow: hidden;
+        background: #111;
+    }
+
+    .pc-edu-img {
+        width: 100%;
+        height: 100%;
+        min-height: 260px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .pc-edu-img--logo {
+        object-fit: contain;
+        background: #ffd700;
+        padding: 20px;
+    }
+
+    .pc-edu-card-info {
+        flex: 1;
+        padding: 24px 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .pc-edu-badge {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid rgba(196, 164, 106, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #c4a46a;
+        font-size: 18px;
+        flex-shrink: 0;
+    }
+
+    .pc-edu-name {
+        font-family: var(--font-title);
+        font-size: 22px;
+        font-weight: 900;
+        color: #ffffff;
+        text-transform: uppercase;
+        line-height: 1.2;
+        margin: 0;
+    }
+
+    .pc-edu-type {
+        font-family: var(--font-body);
+        font-size: 14px;
+        color: #c4a46a;
+        margin: 0;
+    }
+
+    .pc-edu-rule {
+        width: 30px;
+        height: 2px;
+        background: #c4a46a;
+        border-radius: 1px;
+    }
+
+    .pc-edu-desc {
+        font-family: var(--font-body);
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 1.65;
+        margin: 0;
+    }
+
+    .pc-edu-foot {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 22px;
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        background: rgba(255, 255, 255, 0.02);
+        font-family: var(--font-body);
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.55);
+    }
+
+    .pc-edu-foot i {
+        color: #c4a46a;
+        font-size: 14px;
+        flex-shrink: 0;
+    }
+
+    .pc-edu-foot-label {
+        color: #c4a46a;
+        font-weight: 600;
+    }
+
+    .pc-edu-quote {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: -100px;
+        padding: 14px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        width: min(1100px, 100%);
+        font-family: var(--font-body);
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.55);
+    }
+
+    .pc-edu-quote i {
+        color: #c4a46a;
+        font-size: 26px;
+        flex-shrink: 0;
+    }
+
+    .pc-education-section .edu-section-title {
+        font-size: 48px;
+        color: var(--color-title);
+    }
+
+    .pc-education-section .edu-section-subtitle {
+        font-size: 17px;
+        margin-top: 150px;
+    }
+
+    .pc-education-section .edu-section-header {
+        max-width: 1000px;
+        padding: 0 0 8px;
+        margin-top: -120px;
+    }
+
+    /* ---- Contato ---- */
     .pc-contato1 {
         position: absolute;
         top: 90px;
@@ -1060,68 +1339,6 @@ body {
         pointer-events: none;
     }
 
-    .pc-education-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
-        width: 550px;
-        padding: 40px 60px;
-        border-radius: 26px;
-        background: linear-gradient(to right, #332c29b0, #27191469, #41342e42, #a5857813);
-        color: var(--color-white);
-        font-family: var(--font-body);
-    }
-
-    .pc-page-left .pc-education-box {
-        width: 630px;
-    }
-
-    .pc-education-logo {
-        width: 280px;
-        height: 180px;
-        object-fit: contain;
-        border-radius: 26px;
-    }
-
-    .pc-education-logo[alt="Colegio Objetivo"] {
-        position: relative;
-        top: -30px;
-        width: 350px;
-        height: 210px;
-        object-fit: cover;
-    }
-
-    .pc-education-logo[alt="Universidade Sao Judas Tadeu"] {
-        width: 400px;
-        height: 280px;
-        border-radius: 30%;
-    }
-
-    .pc-education-text p,
-    .pc-education-text li {
-        font-family: var(--font-body);
-        font-size: 16px;
-        color: var(--color-white);
-        text-align: center;
-        line-height: 34px;
-        list-style: none;
-    }
-
-    .pc-education-text ul {
-        padding-left: 0;
-    }
-
-    .pc-education-text li::before {
-        content: "• ";
-    }
-
-    .pc-education-text li.pc-education-note {
-        color: #c4c4c4;
-        font-size: 14px;
-    }
-
-    /* ---- Contato ---- */
     .pc-contact-section {
         height: 100vh;
         width: 100vw;

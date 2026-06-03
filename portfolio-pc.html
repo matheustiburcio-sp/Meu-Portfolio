@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Matheus Tiburcio - Front-End Developer (PC)</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   </head>
   <body>
     <nav class="navbar">
@@ -151,31 +152,54 @@
     </section>
 
     <section class="page-section education-section animate-scroll" id="educacao">
-      <div class="education-title"><span>Educacao:</span></div>
-      <div class="page-layout education-layout">
-        <div class="page-left">
-          <div class="page-box education-box">
-            <img src="imagens/colegio.objetivo.webp" alt="Colegio Objetivo" class="education-logo" />
-            <div class="education-text">
-              <ul>
-                <li><strong>Instituicao de conclusao do ensino fundamental e ensino medio</strong></li>
-                <li class="education-note">Objetivo (Carapicuiba)</li>
-              </ul>
+      <div class="edu-section-header">
+        <h2 class="edu-section-title">EDUCAÇÃO</h2>
+        <p class="edu-section-subtitle">Minha formação acadêmica, que me proporcionou uma base sólida de conhecimento e habilidades para minha jornada profissional.</p>
+      </div>
+
+      <div class="edu-cards-grid">
+        <article class="edu-card animate-scroll">
+          <div class="edu-card-body">
+            <div class="edu-card-image-wrap edu-card-image-wrap--logo">
+              <img src="imagens/colegio.objetivo.webp" alt="Colegio Objetivo" class="edu-card-img" />
+            </div>
+            <div class="edu-card-info">
+              <div class="edu-card-badge"><i class="fas fa-school"></i></div>
+              <h3 class="edu-card-name">COLÉGIO OBJETIVO</h3>
+              <p class="edu-card-type">Ensino Fundamental e Ensino Médio</p>
+              <div class="edu-card-rule"></div>
+              <p class="edu-card-desc">Formação completa no Ensino Fundamental e Médio, desenvolvendo uma base sólida de conhecimento e habilidades essenciais.</p>
             </div>
           </div>
-        </div>
-        <div class="page-center"></div>
-        <div class="page-right">
-          <div class="page-box education-box education-box-2">
-            <img src="imagens/sao.judas.webp" alt="Universidade Sao Judas Tadeu" class="education-logo" />
-            <div class="education-text">
-              <ul>
-                <li><strong>Universidade Sao Judas Tadeu</strong></li>
-                <li><strong>Conclusao - 2028 (ADS)</strong></li>
-              </ul>
+          <div class="edu-card-foot">
+            <i class="far fa-calendar-alt"></i>
+            <span><strong class="edu-foot-label">Período:</strong> Conclusão do Ensino Médio</span>
+          </div>
+        </article>
+
+        <article class="edu-card animate-scroll">
+          <div class="edu-card-body">
+            <div class="edu-card-image-wrap">
+              <img src="imagens/sao.judas.webp" alt="Universidade Sao Judas Tadeu" class="edu-card-img" />
+            </div>
+            <div class="edu-card-info">
+              <div class="edu-card-badge"><i class="fas fa-university"></i></div>
+              <h3 class="edu-card-name">UNIVERSIDADE SÃO JUDAS TADEU</h3>
+              <p class="edu-card-type">Ensino Superior</p>
+              <div class="edu-card-rule"></div>
+              <p class="edu-card-desc">Cursando Análise e Desenvolvimento de Sistemas, com foco no desenvolvimento de competências técnicas e analíticas.</p>
             </div>
           </div>
-        </div>
+          <div class="edu-card-foot">
+            <i class="far fa-calendar-alt"></i>
+            <span><strong class="edu-foot-label">Conclusão:</strong> 2028 (ADS)</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="edu-quote">
+        <i class="fas fa-graduation-cap"></i>
+        <span>A educação é a base para transformar conhecimento em oportunidades.</span>
       </div>
     </section>
 
