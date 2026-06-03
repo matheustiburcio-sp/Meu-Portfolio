@@ -7,7 +7,7 @@
   --font-body: "Inria Serif", serif;
 
   --color-white: #ffffff;
-  --color-link: #d4a57a;
+  --color-link: #00c3ff;
   --color-title: #3e1b1b;
 
   --panel-strong: linear-gradient(to right, #1f1815b0, #27191469, #41342e42, #a5857813);
@@ -156,7 +156,7 @@ img {
 }
 
 .navbar-links a:hover {
-  color: #c9a98a;
+  color: var(--color-link);
   opacity: 0.92;
 }
 
@@ -167,16 +167,6 @@ img {
   background: url("imagens/teste4.png") center/cover no-repeat;
 }
 
-.meu-nome .text-wrapper {
-  position: absolute;
-  top: 88px;
-  left: 69px;
-  width: 794px;
-  font-family: var(--font-title);
-  font-weight: 900;
-  color: #463d3d00;
-  font-size: 70px;
-}
 
 .sobre-mim .text-wrapper {
   position: absolute;
@@ -439,6 +429,8 @@ img {
   font-size: 17px;
   color: rgb(255, 255, 255);
   line-height: 1.65;
+  font-weight: 700;
+  font-style: italic;
 }
 
 .edu-cards-grid {
@@ -543,7 +535,7 @@ img {
 
 .edu-card-desc {
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 24px;
   color: rgb(255, 255, 255);
   line-height: 1.65;
   margin: 0;
@@ -557,7 +549,7 @@ img {
   border-top: 1px solid rgba(255, 255, 255, 0.07);
   background: rgba(255, 255, 255, 0.02);
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 25px;
   color: rgb(255, 255, 255);
 }
 
@@ -580,8 +572,10 @@ img {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   width: min(1200px, 100%);
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: 25px;
   color: rgb(255, 255, 255);
+  font-weight: 700;
+  font-style: italic;
 }
 
 .edu-quote i {
