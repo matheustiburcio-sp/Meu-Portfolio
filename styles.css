@@ -946,25 +946,25 @@ body {
 
     .pc-sobre-mim .text-wrapper {
         position: absolute;
-        top: 150px;
-        left: 100px;
+        top: clamp(100px, 10vw, 150px);
+        left: clamp(40px, 5vw, 100px);
         font-family: var(--font-ui);
         font-weight: 300;
         color: #09c6ff;
-        font-size: 50px;
+        font-size: clamp(28px, 3.5vw, 50px);
     }
 
     .pc-meu-nome2 {
         position: absolute;
-        top: 400px;
-        left: 90px;
-        width: 782px;
+        top: clamp(260px, 28vw, 400px);
+        left: clamp(40px, 5vw, 90px);
+        width: min(782px, calc(100% - clamp(80px, 10vw, 180px)));
         padding: 30px 34px;
         border-radius: 22px;
         font-family: var(--font-body);
         font-weight: 700;
-        font-size: 20px;
-        line-height: 40px;
+        font-size: clamp(16px, 1.4vw, 20px);
+        line-height: 1.8;
         color: #ffffff;
         background: var(--panel-soft);
         box-shadow: var(--shadow-soft);
@@ -972,10 +972,11 @@ body {
 
     .pc-hero-actions {
         position: absolute;
-        top: 650px;
-        left: 90px;
+        top: clamp(520px, 46vw, 650px);
+        left: clamp(40px, 5vw, 90px);
         display: flex;
         gap: 14px;
+        flex-wrap: wrap;
     }
 
     .pc-btn-primary,
@@ -1013,8 +1014,8 @@ body {
 
     /* ---- Habilidades ---- */
     .pc-skills-section {
-        height: 100vh;
-        overflow: hidden;
+        min-height: 100vh;
+        overflow: visible;
         background: url("assets/images/curriculo-baixo-3.png") center/cover no-repeat;
     }
 
@@ -1025,11 +1026,14 @@ body {
     .pc-habilidades1 .text-wrapper {
         position: relative;
         top: 47px;
-        left: 650px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: inline-block;
+        white-space: nowrap;
         font-family: var(--font-ui);
         font-weight: 400;
         color: var(--color-title);
-        font-size: 50px;
+        font-size: clamp(28px, 3.5vw, 50px);
     }
 
     .pc-skill-card {
@@ -1341,10 +1345,11 @@ body {
         right: 0;
         text-align: center;
         font-family: var(--font-ui);
-        font-size: 60px;
+        font-size: clamp(28px, 4vw, 60px);
         color: var(--color-title);
         font-weight: 400;
-        white-space: nowrap;
+        white-space: normal;
+        padding: 0 20px;
         pointer-events: none;
     }
 
