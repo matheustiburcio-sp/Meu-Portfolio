@@ -4,7 +4,7 @@ Portfolio pessoal com versao mobile e desktop no mesmo projeto, com troca automa
 
 ## Demo
 
-- Site publicado: https://matheustiburcio-sp.github.io/Meu-Portfolio/
+- Site publicado: https://matheustiburcio-sp.github.io/
 - Repositorio: https://github.com/matheustiburcio-sp/Meu-Portfolio
 
 ## Visao Geral
