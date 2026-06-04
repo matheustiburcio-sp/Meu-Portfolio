@@ -1168,8 +1168,6 @@ body {
         gap: 40px;
         padding: 80px 60px 60px;
         background: url("assets/images/imagem.baixo.png") top/cover no-repeat;
-        opacity: 1 !important;
-        transform: none !important;
     }
 
     .pc-edu-cards-grid {
