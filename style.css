@@ -26,6 +26,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 70px;
+  overflow-x: hidden;
 }
 
 body {
@@ -347,11 +348,12 @@ img {
 
 .skill-card {
   display: grid;
-  grid-template-columns: repeat(3, 200px);
-  grid-template-rows: repeat(2, 140px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
   justify-items: center;
   align-items: center;
+  width: 100%;
+  max-width: 680px;
 }
 
 /* Linha 2: centraliza as 2 últimas imagens nas colunas 1 e 3 */
