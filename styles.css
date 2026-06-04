@@ -1021,13 +1021,14 @@ body {
 
     .pc-habilidades1 {
         position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
     }
 
     .pc-habilidades1 .text-wrapper {
         position: relative;
         top: 47px;
-        left: 50%;
-        transform: translateX(-50%);
         display: inline-block;
         white-space: nowrap;
         font-family: var(--font-ui);
