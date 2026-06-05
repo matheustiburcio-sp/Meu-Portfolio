@@ -1,13 +1,18 @@
-﻿:root {
-    --bg: #1a1815;
-    --bg-home: #1d1a15b0;
-    --bg-card: #201b16;
-    --text-primary: #dbc7b5;
+﻿/* ================================================================
+   VARIÁVEIS GLOBAIS — cores e tokens usados em todo o projeto
+================================================================ */
+:root {
+    --bg: #1a1815;           /* Fundo principal do app mobile */
+    --bg-card: #201b16;      /* Fundo de cards e painéis */
+    --text-primary: #dbc7b5; /* Cor de texto principal */
     --text-secondary: #ffffff;
-    --accent: #c4b5a5;
-    --border: #584b3e91;
+    --accent: #c4b5a5;       /* Cor de destaque dourado-acinzentado */
+    --border: #584b3e91;     /* Bordas semi-transparentes */
 }
 
+/* ================================================================
+   RESET GLOBAL — remove margens/paddings padrão do browser
+================================================================ */
 * {
     margin: 0;
     padding: 0;
@@ -15,14 +20,17 @@
     -webkit-tap-highlight-color: transparent;
 }
 
+/* ================================================================
+   BASE HTML/BODY — configuração do scroll e fundo global
+================================================================ */
 html {
   height: auto !important;
   overflow: auto !important;
   overflow-y: scroll;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  scrollbar-width: none;       /* Firefox: oculta scrollbar */
+  -ms-overflow-style: none;   /* IE/Edge: oculta scrollbar */
   scroll-behavior: smooth;
-  scroll-padding-top: 70px;
+  scroll-padding-top: 70px;   /* Compensa a navbar fixa no scroll */
 }
 
 html::-webkit-scrollbar {
@@ -49,11 +57,13 @@ body {
     align-items: center;
 }
 
+/* ================================================================
+   APP SHELL — container do layout mobile (simula tela de celular)
+================================================================ */
 .app-shell {
     width: 100vw;
     max-width: 100%;
     min-height: 100dvh;
-    height: 100vh;
     height: 100dvh;
     max-height: none;
     background: var(--bg);
@@ -72,6 +82,7 @@ body {
     }
 }
 
+/* Touch (celular real): remove borda/sombra decorativa do shell */
 @media (hover: none) and (pointer: coarse) {
     html,
     body {
@@ -88,6 +99,7 @@ body {
     }
 }
 
+/* Mouse em tela média: exibe o shell como moldura de celular */
 @media (min-width: 768px) and (hover: hover) and (pointer: fine) {
     .app-shell {
         max-width: 400px;
@@ -99,6 +111,9 @@ body {
     }
 }
 
+/* ================================================================
+   NAVBAR MOBILE — barra de navegação superior (links + botões voltar/home)
+================================================================ */
 .top-nav {
     display: flex;
     justify-content: center;
@@ -156,6 +171,9 @@ body {
     margin-left: 20px;
 }
 
+/* ================================================================
+   ÁREA DE CONTEÚDO MOBILE — contêiner rolável que envolve todas as seções
+================================================================ */
 .main-content {
     flex: 1;
     overflow-y: auto;
@@ -168,8 +186,11 @@ body {
     display: none;
 }
 
+/* ================================================================
+   SEÇÕES MOBILE — mostradas/ocultadas pelo JS via classe .active
+================================================================ */
 .page-section {
-    display: none;
+    display: none;       /* Oculta por padrão */
     min-height: 100%;
     background: #312B28;
     padding: 0 24px 20px;
@@ -251,11 +272,15 @@ body {
     }
 }
 
+/* ================================================================
+   HOME MOBILE — título, avatar e card "sobre mim"
+================================================================ */
 #home {
     background: #1D1A15;
     padding: 0 24px 20px;
 }
 
+/* Título "FRONT-END / DEV" */
 .hero-title {
     padding-top: 10px;
     margin-bottom: 18px;
@@ -279,16 +304,7 @@ body {
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
 }
 
-.profile-name {
-    margin-bottom: 6px;
-    text-align: center;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    color: var(--text-primary);
-}
-
+/* Label "Sobre mim:" */
 .profile-subtitle {
     margin-bottom: 18px;
     text-align: center;
@@ -310,206 +326,9 @@ body {
     color: rgb(255, 255, 255);
 }
 
-/* ===== HOME - Novo layout ===== */
-.home-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 18px;
-    margin-bottom: 22px;
-    padding: 6px 14px;
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 999px;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: var(--text-primary);
-    background: rgba(255,255,255,0.04);
-}
-
-.home-badge-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #4ade80;
-    flex-shrink: 0;
-    animation: pulse-dot 2s infinite;
-}
-
-@keyframes pulse-dot {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-}
-
-.home-hero-layout {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    align-items: flex-start;
-}
-
-.home-hero-left {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    flex: 1;
-    min-width: 0;
-}
-
-.home-name {
-    font-size: clamp(28px, 8vw, 36px);
-    font-weight: 800;
-    line-height: 1.1;
-    color: #ffffff;
-    letter-spacing: -0.5px;
-}
-
-.home-name-dot {
-    color: #c4a46a;
-}
-
-.home-role {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    color: var(--text-primary);
-    opacity: 0.7;
-}
-
-.home-desc {
-    font-size: 13px;
-    line-height: 1.75;
-    color: rgba(255,255,255,0.75);
-}
-
-.home-actions {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 6px;
-}
-
-.home-btn-primary,
-.home-btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 13px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: transform 0.2s ease, filter 0.2s ease;
-    cursor: pointer;
-}
-
-.home-btn-primary {
-    background: #ffffff;
-    color: #1a1815;
-}
-
-.home-btn-secondary {
-    border: 1px solid rgba(255,255,255,0.2);
-    background: transparent;
-    color: #ffffff;
-}
-
-.home-btn-primary:hover,
-.home-btn-secondary:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.1);
-}
-
-/* Lado direito */
-.home-hero-right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-    flex: 0 0 auto;
-    width: 48%;
-}
-
-.home-avatar-wrap {
-    position: relative;
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    border: 2px solid #c4a46a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #27231f;
-}
-
-.home-avatar-initials {
-    font-size: 26px;
-    font-weight: 800;
-    color: #c4a46a;
-    letter-spacing: 1px;
-}
-
-.home-avatar-status {
-    position: absolute;
-    bottom: 4px;
-    right: 4px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #4ade80;
-    border: 2px solid #1a1815;
-}
-
-.home-stats-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    width: 100%;
-}
-
-.home-stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 14px 10px;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
-    gap: 4px;
-}
-
-.home-stat-value {
-    font-size: 18px;
-    font-weight: 800;
-    color: #ffffff;
-    letter-spacing: -0.5px;
-}
-
-.home-stat-label {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 1.2px;
-    color: rgba(255,255,255,0.45);
-}
-
-.home-tags {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-}
-
-.home-tags span {
-    padding: 5px 12px;
-    border-radius: 999px;
-    border: 1px solid rgba(255,255,255,0.15);
-    background: rgba(255,255,255,0.04);
-    font-size: 11px;
-    color: rgba(255,255,255,0.7);
-}
-
+/* ================================================================
+   HABILIDADES MOBILE — badge de título e cards com listas
+================================================================ */
 .section-header {
     margin-top: 10px;
     margin-bottom: 22px;
@@ -570,11 +389,9 @@ body {
     opacity: 0.9;
 }
 
-.education-card {
-    padding-bottom: 16px;
-}
-
-/* ============ EDU CARD (novo design) ============ */
+/* ================================================================
+   EDUCAÇÃO MOBILE — cards de instituição e citação
+================================================================ */
 .edu-section-header {
     padding: 20px 0 14px;
     text-align: center;
@@ -751,6 +568,9 @@ body {
     flex-shrink: 0;
 }
 
+/* ================================================================
+   CONTATO MOBILE — lista de links clicáveis (WhatsApp, email, GitHub...)
+================================================================ */
 .contact-links {
     display: flex;
     flex-direction: column;
@@ -820,6 +640,9 @@ body {
     font-weight: 500;
 }
 
+/* ================================================================
+   BOTÕES DE NAVEGAÇÃO MOBILE — "VOLTAR" e "AVANÇAR" entre seções
+================================================================ */
 .nav-actions {
     display: flex;
     justify-content: center;
@@ -860,6 +683,9 @@ body {
     cursor: not-allowed;
 }
 
+/* ================================================================
+   PROJETOS MOBILE — grid de cards com thumbnail e detalhes
+================================================================ */
 .projects-list {
     display: grid;
     gap: 14px;
@@ -933,6 +759,7 @@ body {
     color: #000;
 }
 
+/* Ajustes para telas muito pequenas (≤ 360px) */
 @media (max-width: 360px) {
     .top-nav {
         gap: 18px;
@@ -955,6 +782,7 @@ body {
     }
 }
 
+/* Acessibilidade: desativa animações para quem prefere menos movimento */
 @media (prefers-reduced-motion: reduce) {
     .page-section.entering,
     .page-section.entering * {
@@ -964,9 +792,9 @@ body {
 }
 
 /* ================================================================
-   LAYOUT PC — visível apenas em telas ≥ 900px
+   LAYOUT PC — oculto por padrão, ativado em telas ≥ 900px
+   Cada seção (.pc-section) tem seu próprio fundo e altura de 100vh
 ================================================================ */
-
 .pc-layout {
     display: none;
 }
@@ -985,22 +813,22 @@ body {
         scroll-padding-top: 70px;
     }
 
+    /* Restaura scroll natural e remove o fundo do body (cada seção PC tem o seu) */
     body {
         height: auto !important;
         overflow: visible !important;
         display: block !important;
-        align-items: unset;
-        justify-content: unset;
         background: none;
     }
-
+   
+    /* Container raiz do layout desktop — ativa fontes e variáveis PC */
     .pc-layout {
         display: block;
         font-family: "Inria Serif", serif;
         color: #fff;
     }
 
-    /* Animações de reveal */
+    /* Animações de reveal ao entrar na viewport (controlado pelo IntersectionObserver no script.js) */
     .animate-scroll,
     .animate-hero {
         opacity: 0;
@@ -1039,7 +867,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: url("assets/images/teste4.png") center/cover no-repeat;
+        background: url("assets/teste_4.png") center/cover no-repeat;s
         padding: 100px 80px 60px;
     }
 
@@ -1237,7 +1065,9 @@ body {
         flex-shrink: 0;
     }
 
-    /* ---- Navbar ---- */
+    /* ================================================================
+       PC NAVBAR — barra fixa no topo com links de navegação
+    ================================================================ */
     .pc-navbar {
         position: fixed;
         top: 0;
@@ -1250,16 +1080,6 @@ body {
         padding: 24px 10px;
         background: var(--nav-bg);
         backdrop-filter: blur(8px);
-    }
-
-    .pc-navbar-logo {
-        position: absolute;
-        left: 30px;
-        font-family: var(--font-title);
-        font-weight: 900;
-        font-size: 14px;
-        color: #fff7f700;
-        letter-spacing: 2px;
     }
 
     .pc-navbar-links {
@@ -1281,7 +1101,9 @@ body {
         opacity: 0.92;
     }
 
-    /* ---- Layout genérico ---- */
+    /* ================================================================
+       PC LAYOUT CONTATO — estrutura flex usada na seção de contato
+    ================================================================ */
     .pc-page-layout {
         display: flex;
         flex-direction: row;
@@ -1309,34 +1131,7 @@ body {
         gap: 20px;
     }
 
-    .pc-page-list {
-        padding-left: 24px;
-    }
 
-    .pc-page-list li {
-        font-family: var(--font-body);
-        font-weight: 400;
-        color: var(--color-white);
-        font-size: 20px;
-        line-height: 90px;
-    }
-
-  
-    .pc-page-box1 {
-        margin-left: 30px;
-    }
-
-    .pc-page-box2 {
-        padding: 30px 64px;
-        margin-left: 28px;
-    }
-
-    .pc-page-box2 .pc-page-list li {
-        font-size: 20px;
-        line-height: 60px;
-    }
-
-    /* ---- Hero (legado removido) ---- */
 
     .pc-meu-nome .text-wrapper {
         position: absolute;
@@ -1404,67 +1199,9 @@ body {
         filter: brightness(1.06);
     }
 
-    /* ---- Habilidades ---- */
-    .pc-skills-section {
-        min-height: 100vh;
-        overflow: visible;
-        background: url("assets/images/curriculo-baixo-3.png") center/cover no-repeat;
-    }
-
-    .pc-habilidades1 {
-        position: absolute;
-        left: 0;
-        right: 0;
-        text-align: center;
-    }
-
-    .pc-habilidades1 .text-wrapper {
-        position: relative;
-        top: 47px;
-        display: inline-block;
-        white-space: nowrap;
-        font-family: var(--font-ui);
-        font-weight: 400;
-        color: var(--color-title);
-        font-size: clamp(28px, 3.5vw, 50px);
-    }
-
-    .pc-skill-card {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 24px;
-        justify-items: center;
-        align-items: center;
-        width: 100%;
-        max-width: 680px;
-    }
-
-    .pc-skill-row {
-        display: contents;
-    }
-
-    .pc-skill-row:last-child .pc-tech-icon:first-child {
-        grid-column: 1;
-    }
-
-    .pc-skill-row:last-child .pc-tech-icon:last-child {
-        grid-column: 3;
-    }
-
-    .pc-tech-icon {
-        width: 140px;
-        height: 140px;
-        object-fit: contain;
-    }
-
-    .pc-tech-icon[alt="JavaScript"],
-    .pc-tech-icon[alt="Java"],
-    .pc-tech-icon[alt="Figma"] {
-        width: 200px;
-        height: 140px;
-    }
-
-    /* ---- Projetos ---- */
+    /* ================================================================
+       PC PROJETOS — grade de cards de projeto
+    ================================================================ */
     .pc-projects-section {
         min-height: 100vh;
         width: 100%;
@@ -1549,7 +1286,9 @@ body {
         text-decoration: underline;
     }
 
-    /* ---- Educação ---- */
+    /* ================================================================
+       PC EDUCAÇÃO — cards de instituição em grid horizontal
+    ================================================================ */
     .pc-education-section {
         position: relative;
         min-height: 100vh;
@@ -1729,7 +1468,9 @@ body {
         margin-top: -120px;
     }
 
-    /* ---- Contato ---- */
+    /* ================================================================
+       PC CONTATO — seção centralizada com box de informações
+    ================================================================ */
     .pc-contato1 {
         position: absolute;
         top: 90px;
@@ -1795,7 +1536,7 @@ body {
         flex-shrink: 0;
     }
 
-    /* ---- Breakpoint 1366px ---- */
+    /* Ajustes para notebooks com resolução até 1366px */
     @media (max-width: 1366px) {
         .pc-navbar {
             padding: 16px 14px;
@@ -1807,11 +1548,6 @@ body {
 
         .pc-navbar-links a {
             font-size: 12px;
-        }
-
-        .pc-hero-actions {
-            top: 610px;
-            left: 60px;
         }
 
         .pc-projects-title {
