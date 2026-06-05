@@ -4,13 +4,29 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Matheus Tiburcio - Front-End Developer (PC)</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Press+Start+2P&family=Inria+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+    <style>
+      /* Sobrescreve overflow do body para o layout PC permitir scroll */
+      @media (min-width: 900px) {
+        html, body {
+          overflow: visible !important;
+          height: auto !important;
+        }
+        body {
+          display: block;
+          overflow-y: auto !important;
+        }
+      }
+    </style>
   </head>
-  <body>
-    <nav class="navbar">
-      <span class="navbar-logo">Matheus Tiburcio Araujo</span>
-      <ul class="navbar-links">
+  <body class="pc-layout">
+    <nav class="pc-navbar">
+      <span class="pc-navbar-logo">Matheus Tiburcio Araujo</span>
+      <ul class="pc-navbar-links">
         <li><a href="#hero">Inicio</a></li>
         <li><a href="#habilidades">Habilidades</a></li>
         <li><a href="#projetos">Projetos</a></li>
@@ -19,24 +35,24 @@
       </ul>
     </nav>
 
-    <section class="page-section hero" id="hero">
-      <div class="meu-nome animate-hero"><div class="text-wrapper">MATHEUS TIBURCIO</div></div>
-      <div class="sobre-mim animate-hero"><div class="text-wrapper">Sobre mim:</div></div>
-      <div class="meu-nome2 animate-hero">
+    <section class="pc-section pc-hero" id="hero">
+      <div class="pc-meu-nome animate-hero"><div class="text-wrapper">MATHEUS TIBURCIO</div></div>
+      <div class="pc-sobre-mim animate-hero"><div class="text-wrapper">Sobre mim:</div></div>
+      <div class="pc-meu-nome2 animate-hero">
         <p>Sou estudante de Analise e Desenvolvimento de Sistemas, com foco em desenvolvimento front-end responsivo. Gosto de transformar ideias em interfaces funcionais, acessiveis e com boa experiencia para o usuario, sempre buscando codigo limpo e evolucao continua.</p>
       </div>
-      <div class="hero-actions animate-hero">
-        <a class="btn-primary" href="#projetos">Ver projetos</a>
-        <a class="btn-secondary" href="#contato">Fale comigo</a>
+      <div class="pc-hero-actions animate-hero">
+        <a class="pc-btn-primary" href="#projetos">Ver projetos</a>
+        <a class="pc-btn-secondary" href="#contato">Fale comigo</a>
       </div>
     </section>
 
-    <section class="page-section skills-section" id="habilidades">
-      <div class="habilidades1 animate-scroll"><div class="text-wrapper">HABILIDADES:</div></div>
-      <div class="page-layout">
-        <div class="page-left">
-          <div class="page-box1 animate-scroll">
-            <ul class="page-list">
+    <section class="pc-section pc-skills-section" id="habilidades">
+      <div class="pc-habilidades1 animate-scroll"><div class="text-wrapper">HABILIDADES:</div></div>
+      <div class="pc-page-layout">
+        <div class="pc-page-left">
+          <div class="pc-page-box1 animate-scroll">
+            <ul class="pc-page-list">
               <li>Trabalho em equipe</li>
               <li>Organizacao</li>
               <li>Capacidade de trabalhar sob pressao</li>
@@ -46,23 +62,23 @@
             </ul>
           </div>
         </div>
-        <div class="page-center">
-          <div class="skill-card animate-scroll">
-            <div class="skill-row">
-              <img src="imagens/html5k.webp" alt="HTML5" class="tech-icon" />
-              <img src="imagens/css4k.webp" alt="CSS3" class="tech-icon" />
-              <img src="imagens/java4k.webp" alt="JavaScript" class="tech-icon" />
+        <div class="pc-page-center">
+          <div class="pc-skill-card animate-scroll">
+            <div class="pc-skill-row">
+              <img src="imagens/html5k.webp" alt="HTML5" class="pc-tech-icon" />
+              <img src="imagens/css4k.webp" alt="CSS3" class="pc-tech-icon" />
+              <img src="imagens/java4k.webp" alt="JavaScript" class="pc-tech-icon" />
             </div>
-            <div class="skill-row">
-              <img src="imagens/java.png" alt="Java" class="tech-icon" />
-              <img src="imagens/figma.png" alt="Figma" class="tech-icon" />
-              <img src="imagens/react.svg" alt="React" class="tech-icon" />
+            <div class="pc-skill-row">
+              <img src="imagens/java.png" alt="Java" class="pc-tech-icon" />
+              <img src="imagens/figma.png" alt="Figma" class="pc-tech-icon" />
+              <img src="imagens/react.svg" alt="React" class="pc-tech-icon" />
             </div>
           </div>
         </div>
-        <div class="page-right">
-          <div class="page-box2 animate-scroll">
-            <ul class="page-list">
+        <div class="pc-page-right">
+          <div class="pc-page-box2 animate-scroll">
+            <ul class="pc-page-list">
               <li>HTML</li>
               <li>CSS</li>
               <li>JavaScript</li>
@@ -80,158 +96,158 @@
       </div>
     </section>
 
-    <section class="page-section projects-section animate-scroll" id="projetos">
-      <div class="projects-title"><span>PROJETOS:</span></div>
-      <div class="projects-grid">
-        <article class="project-card">
+    <section class="pc-section pc-projects-section animate-scroll" id="projetos">
+      <div class="pc-projects-title"><span>PROJETOS:</span></div>
+      <div class="pc-projects-grid">
+        <article class="pc-project-card">
           <h3>Portfolio Profissional</h3>
           <p>Site pessoal com foco em identidade visual, navegacao simples, animacoes de entrada e layout responsivo para desktop e celular.</p>
-          <div class="project-tags">
+          <div class="pc-project-tags">
             <span>HTML</span>
             <span>CSS</span>
             <span>JavaScript</span>
           </div>
-          <div class="project-links">
+          <div class="pc-project-links">
             <a href="https://matheustiburcio-sp.github.io/Meu-Portfolio/" target="_blank" rel="noopener noreferrer">Ver online</a>
             <a href="https://github.com/matheustiburcio-sp/Meu-Portfolio" target="_blank" rel="noopener noreferrer">Codigo</a>
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="pc-project-card">
           <h3>Landing Page Responsiva</h3>
           <p>Pagina institucional com hierarquia visual clara, componentes reutilizaveis e ajuste de layout para diferentes resolucoes.</p>
-          <div class="project-tags">
+          <div class="pc-project-tags">
             <span>HTML</span>
             <span>CSS</span>
             <span>UI/UX</span>
           </div>
-          <div class="project-links">
+          <div class="pc-project-links">
             <a href="https://github.com/matheustiburcio-sp" target="_blank" rel="noopener noreferrer">Ver repositorios</a>
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="pc-project-card">
           <h3>Desafios de Logica e Front-end</h3>
           <p>Exercicios e pequenos projetos para praticar estrutura de paginas, manipulacao de elementos e boas praticas de desenvolvimento.</p>
-          <div class="project-tags">
+          <div class="pc-project-tags">
             <span>JavaScript</span>
             <span>Git</span>
             <span>GitHub</span>
           </div>
-          <div class="project-links">
+          <div class="pc-project-links">
             <a href="https://github.com/matheustiburcio-sp" target="_blank" rel="noopener noreferrer">Ver GitHub</a>
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="pc-project-card">
           <h3>EduConnect2</h3>
           <p>Plataforma educacional desenvolvida para conectar alunos e professores, facilitando o acesso a conteudos e a comunicacao entre os usuarios.</p>
-          <div class="project-tags">
+          <div class="pc-project-tags">
             <span>React</span>
             <span>JavaScript</span>
             <span>GitHub</span>
           </div>
-          <div class="project-links">
+          <div class="pc-project-links">
             <a href="https://github.com/matheustiburcio-sp/educonnect2" target="_blank" rel="noopener noreferrer">Codigo</a>
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="pc-project-card">
           <h3>Saber Aberto Web</h3>
           <p>Aplicacao web com foco em compartilhamento de conhecimento de forma aberta e acessivel, promovendo o aprendizado colaborativo.</p>
-          <div class="project-tags">
+          <div class="pc-project-tags">
             <span>HTML</span>
             <span>CSS</span>
             <span>JavaScript</span>
           </div>
-          <div class="project-links">
+          <div class="pc-project-links">
             <a href="https://github.com/matheustiburcio-sp/saber-aberto-web" target="_blank" rel="noopener noreferrer">Codigo</a>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="page-section education-section animate-scroll" id="educacao">
+    <section class="pc-section pc-education-section animate-scroll" id="educacao">
       <div class="edu-section-header">
         <h2 class="edu-section-title">EDUCAÇÃO</h2>
         <p class="edu-section-subtitle">Minha formação acadêmica, que me proporcionou uma base sólida de conhecimento e habilidades para minha jornada profissional.</p>
       </div>
 
-      <div class="edu-cards-grid">
-        <article class="edu-card animate-scroll">
-          <div class="edu-card-body">
-            <div class="edu-card-image-wrap edu-card-image-wrap--logo">
-              <img src="imagens/colegio.objetivo.webp" alt="Colegio Objetivo" class="edu-card-img" />
+      <div class="pc-edu-cards-grid">
+        <article class="pc-edu-card animate-scroll">
+          <div class="pc-edu-card-body">
+            <div class="pc-edu-img-wrap">
+              <img src="imagens/colegio.objetivo.webp" alt="Colegio Objetivo" class="pc-edu-img pc-edu-img--logo" />
             </div>
-            <div class="edu-card-info">
-              <div class="edu-card-badge"><i class="fas fa-school"></i></div>
-              <h3 class="edu-card-name">COLÉGIO OBJETIVO</h3>
-              <p class="edu-card-type">Ensino Fundamental e Ensino Médio</p>
-              <div class="edu-card-rule"></div>
-              <p class="edu-card-desc">Formação completa no Ensino Fundamental e Médio, desenvolvendo uma base sólida de conhecimento e habilidades essenciais.</p>
+            <div class="pc-edu-card-info">
+              <div class="pc-edu-badge"><i class="fas fa-school"></i></div>
+              <h3 class="pc-edu-name">COLÉGIO OBJETIVO</h3>
+              <p class="pc-edu-type">Ensino Fundamental e Ensino Médio</p>
+              <div class="pc-edu-rule"></div>
+              <p class="pc-edu-desc">Formação completa no Ensino Fundamental e Médio, desenvolvendo uma base sólida de conhecimento e habilidades essenciais.</p>
             </div>
           </div>
-          <div class="edu-card-foot">
+          <div class="pc-edu-foot">
             <i class="far fa-calendar-alt"></i>
-            <span><strong class="edu-foot-label">Período:</strong> Conclusão do Ensino Médio</span>
+            <span><strong class="pc-edu-foot-label">Período:</strong> Conclusão do Ensino Médio</span>
           </div>
         </article>
 
-        <article class="edu-card animate-scroll">
-          <div class="edu-card-body">
-            <div class="edu-card-image-wrap">
-              <img src="imagens/sao.judas.webp" alt="Universidade Sao Judas Tadeu" class="edu-card-img" />
+        <article class="pc-edu-card animate-scroll">
+          <div class="pc-edu-card-body">
+            <div class="pc-edu-img-wrap">
+              <img src="imagens/sao.judas.webp" alt="Universidade Sao Judas Tadeu" class="pc-edu-img" />
             </div>
-            <div class="edu-card-info">
-              <div class="edu-card-badge"><i class="fas fa-university"></i></div>
-              <h3 class="edu-card-name">UNIVERSIDADE SÃO JUDAS TADEU</h3>
-              <p class="edu-card-type">Ensino Superior</p>
-              <div class="edu-card-rule"></div>
-              <p class="edu-card-desc">Cursando Análise e Desenvolvimento de Sistemas, com foco no desenvolvimento de competências técnicas e analíticas.</p>
+            <div class="pc-edu-card-info">
+              <div class="pc-edu-badge"><i class="fas fa-university"></i></div>
+              <h3 class="pc-edu-name">UNIVERSIDADE SÃO JUDAS TADEU</h3>
+              <p class="pc-edu-type">Ensino Superior</p>
+              <div class="pc-edu-rule"></div>
+              <p class="pc-edu-desc">Cursando Análise e Desenvolvimento de Sistemas, com foco no desenvolvimento de competências técnicas e analíticas.</p>
             </div>
           </div>
-          <div class="edu-card-foot">
+          <div class="pc-edu-foot">
             <i class="far fa-calendar-alt"></i>
-            <span><strong class="edu-foot-label">Conclusão:</strong> 2028 (ADS)</span>
+            <span><strong class="pc-edu-foot-label">Conclusão:</strong> 2028 (ADS)</span>
           </div>
         </article>
       </div>
 
-      <div class="edu-quote">
+      <div class="pc-edu-quote">
         <i class="fas fa-graduation-cap"></i>
         <span>A educação é a base para transformar conhecimento em oportunidades.</span>
       </div>
     </section>
 
-    <section class="page-section contact-section animate-scroll" id="contato">
-      <div class="contato1">CONTATO:</div>
-      <div class="page-layout">
-        <div class="page-left"></div>
-        <div class="page-center">
-          <div class="page-box contact-box">
-            <div class="contact-item">
-              <img src="imagens/telefone.webp" alt="Telefone" class="contact-icon" />
+    <section class="pc-section pc-contact-section animate-scroll" id="contato">
+      <div class="pc-contato1">CONTATO:</div>
+      <div class="pc-page-layout">
+        <div class="pc-page-left"></div>
+        <div class="pc-page-center">
+          <div class="pc-contact-box">
+            <div class="pc-contact-item">
+              <img src="imagens/telefone.webp" alt="Telefone" class="pc-contact-icon" />
               <p><strong>Telefone:</strong> <a href="tel:+5511964159465">(11)96415-9465</a></p>
             </div>
-            <div class="contact-item">
-              <img src="imagens/gmail.png" alt="Email" class="contact-icon" />
+            <div class="pc-contact-item">
+              <img src="imagens/gmail.png" alt="Email" class="pc-contact-icon" />
               <p><strong>Email:</strong> <a href="mailto:matheus.tiburzio@gmail.com">matheus.tiburzio@gmail.com</a></p>
             </div>
-            <div class="contact-item">
-              <img src="imagens/github.png" alt="GitHub" class="contact-icon" />
+            <div class="pc-contact-item">
+              <img src="imagens/github.png" alt="GitHub" class="pc-contact-icon" />
               <p><strong>GitHub:</strong>
                 <a href="https://github.com/matheustiburcio-sp" target="_blank" rel="noopener noreferrer">github.com/matheustiburcio-sp</a>
               </p>
             </div>
-            <div class="contact-item">
-              <img src="imagens/github.png" alt="Portfolio" class="contact-icon" />
+            <div class="pc-contact-item">
+              <img src="imagens/github.png" alt="Portfolio" class="pc-contact-icon" />
               <p><strong>Portfolio:</strong>
                 <a href="https://matheustiburcio-sp.github.io/Meu-Portfolio/" target="_blank" rel="noopener noreferrer">matheustiburcio-sp.github.io/Meu-Portfolio</a>
               </p>
             </div>
           </div>
         </div>
-        <div class="page-right"></div>
+        <div class="pc-page-right"></div>
       </div>
     </section>
     <script src="script.js"></script>
