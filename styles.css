@@ -310,6 +310,206 @@ body {
     color: rgb(255, 255, 255);
 }
 
+/* ===== HOME - Novo layout ===== */
+.home-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    margin-bottom: 22px;
+    padding: 6px 14px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--text-primary);
+    background: rgba(255,255,255,0.04);
+}
+
+.home-badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4ade80;
+    flex-shrink: 0;
+    animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+.home-hero-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.home-hero-left {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+}
+
+.home-name {
+    font-size: clamp(28px, 8vw, 36px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+.home-name-dot {
+    color: #c4a46a;
+}
+
+.home-role {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--text-primary);
+    opacity: 0.7;
+}
+
+.home-desc {
+    font-size: 13px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.75);
+}
+
+.home-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+}
+
+.home-btn-primary,
+.home-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    cursor: pointer;
+}
+
+.home-btn-primary {
+    background: #ffffff;
+    color: #1a1815;
+}
+
+.home-btn-secondary {
+    border: 1px solid rgba(255,255,255,0.2);
+    background: transparent;
+    color: #ffffff;
+}
+
+.home-btn-primary:hover,
+.home-btn-secondary:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+/* Lado direito */
+.home-hero-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    flex: 0 0 auto;
+    width: 48%;
+}
+
+.home-avatar-wrap {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid #c4a46a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #27231f;
+}
+
+.home-avatar-initials {
+    font-size: 26px;
+    font-weight: 800;
+    color: #c4a46a;
+    letter-spacing: 1px;
+}
+
+.home-avatar-status {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #4ade80;
+    border: 2px solid #1a1815;
+}
+
+.home-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+}
+
+.home-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 10px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    gap: 4px;
+}
+
+.home-stat-value {
+    font-size: 18px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+.home-stat-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    color: rgba(255,255,255,0.45);
+}
+
+.home-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.home-tags span {
+    padding: 5px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.04);
+    font-size: 11px;
+    color: rgba(255,255,255,0.7);
+}
+
 .section-header {
     margin-top: 10px;
     margin-bottom: 22px;
@@ -832,6 +1032,211 @@ body {
         width: 100%;
     }
 
+    /* ---- Hero novo layout ---- */
+
+    .pc-hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url("assets/images/teste4.png") center/cover no-repeat;
+        padding: 100px 80px 60px;
+    }
+
+    .pc-home-inner {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 60px;
+        width: min(1200px, 100%);
+    }
+
+    .pc-home-left {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        flex: 1;
+    }
+
+    .pc-home-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 18px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+        font-family: var(--font-ui);
+        font-size: 10px;
+        color: #fff;
+        background: rgba(255,255,255,0.06);
+        letter-spacing: 1px;
+        width: fit-content;
+    }
+
+    .pc-home-badge-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #4ade80;
+        flex-shrink: 0;
+        animation: pulse-dot 2s infinite;
+    }
+
+    @keyframes pulse-dot {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.4; }
+    }
+
+    .pc-home-name {
+        font-family: var(--font-title);
+        font-size: clamp(40px, 4.5vw, 68px);
+        font-weight: 800;
+        line-height: 1.1;
+        color: #ffffff;
+        letter-spacing: -1px;
+    }
+
+    .pc-home-name-dot {
+        color: #c4a46a;
+    }
+
+    .pc-home-role {
+        font-family: var(--font-ui);
+        font-size: 13px;
+        letter-spacing: 2px;
+        color: rgba(255,255,255,0.6);
+    }
+
+    .pc-home-desc {
+        font-family: var(--font-body);
+        font-size: clamp(15px, 1.2vw, 18px);
+        line-height: 1.8;
+        color: rgba(255,255,255,0.8);
+        max-width: 520px;
+    }
+
+    .pc-home-actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 6px;
+    }
+
+    .pc-home-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        flex: 0 0 auto;
+    }
+
+    .pc-home-avatar-wrap {
+        position: relative;
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        border: 3px solid #c4a46a;
+        overflow: hidden;
+        background: #27231f;
+    }
+
+    .pc-home-avatar-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        display: block;
+    }
+
+    .pc-home-avatar-status {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #4ade80;
+        border: 3px solid #1a1815;
+        z-index: 1;
+    }
+
+    .pc-home-stats-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        width: 280px;
+    }
+
+    .pc-home-stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 18px 14px;
+        border-radius: 14px;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.1);
+        gap: 6px;
+    }
+
+    .pc-home-stat-value {
+        font-family: var(--font-title);
+        font-size: 24px;
+        font-weight: 800;
+        color: #ffffff;
+    }
+
+    .pc-home-stat-label {
+        font-family: var(--font-ui);
+        font-size: 9px;
+        letter-spacing: 1.2px;
+        color: rgba(255,255,255,0.4);
+    }
+
+    .pc-home-tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        width: 280px;
+    }
+
+    .pc-home-tags span {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(255,255,255,0.18);
+        background: rgba(255,255,255,0.05);
+        font-family: var(--font-body);
+        font-size: 13px;
+        color: rgba(255,255,255,0.85);
+    }
+
+    .pc-home-tags span img {
+        width: 18px;
+        height: 18px;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+
+    .pc-tag-ts {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+        border-radius: 3px;
+        background: #3178c6;
+        font-size: 9px;
+        font-weight: 800;
+        color: #fff;
+        font-family: sans-serif;
+        flex-shrink: 0;
+    }
+
     /* ---- Navbar ---- */
     .pc-navbar {
         position: fixed;
@@ -916,16 +1321,7 @@ body {
         line-height: 90px;
     }
 
-    .pc-page-box1,
-    .pc-page-box2 {
-        padding: 20px 30px;
-        background: var(--panel-strong);
-        border-radius: 26px;
-        align-self: flex-start;
-        margin-top: 150px;
-        margin-right: 40px;
-    }
-
+  
     .pc-page-box1 {
         margin-left: 30px;
     }
@@ -940,12 +1336,7 @@ body {
         line-height: 60px;
     }
 
-    /* ---- Hero ---- */
-    .pc-hero {
-        min-height: 100vh;
-        position: relative;
-        background: url("assets/images/teste4.png") center/cover no-repeat;
-    }
+    /* ---- Hero (legado removido) ---- */
 
     .pc-meu-nome .text-wrapper {
         position: absolute;
@@ -968,20 +1359,7 @@ body {
         font-size: clamp(28px, 3.5vw, 50px);
     }
 
-    .pc-meu-nome2 {
-        position: absolute;
-        top: clamp(260px, 28vw, 400px);
-        left: clamp(40px, 5vw, 90px);
-        width: min(782px, calc(100% - clamp(80px, 10vw, 180px)));
-        padding: 30px 34px;
-        border-radius: 22px;
-        font-family: var(--font-body);
-        font-weight: 700;
-        font-size: clamp(16px, 1.4vw, 20px);
-        line-height: 1.8;
-        color: #ffffff;
-        background: var(--panel-soft);
-        box-shadow: var(--shadow-soft);
+ 
     }
 
     .pc-hero-actions {
