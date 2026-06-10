@@ -212,3 +212,82 @@ content.addEventListener(
 );
 
 updateView(false);
+function initPCScrollSpy() {
+    const sections = document.querySelectorAll('.pc-section[id]');
+    const navLinks = document.querySelectorAll('.pc-navbar-links a');
+ 
+    if (!sections.length || !navLinks.length) return;
+ 
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    navLinks.forEach((link) => {
+                        const href = link.getAttribute('href');
+                        link.classList.toggle('active', href === `#${id}`);
+                    });
+                }
+            });
+        },
+        {
+            root: null,
+            // Dispara quando a seção ocupa pelo menos 40% da tela
+            threshold: 0.4,
+        }
+    );
+ 
+    sections.forEach((section) => observer.observe(section));
+}
+ 
+/* ----------------------------------------------------------------
+   PARTE B — Mobile (ativa o link ao clicar na nav)
+   O site mobile já usa JS para trocar seções, então
+   basta marcar .active no link clicado
+---------------------------------------------------------------- */
+function initMobileNavActive() {
+    const navLinks = document.querySelectorAll('.top-nav a');
+ 
+    navLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+            navLinks.forEach((l) => l.classList.remove('active'));
+            link.classList.add('active');
+        });
+    });
+ 
+    // Marca "Inicio" como ativo por padrão ao carregar
+    const homeLink = document.querySelector('.top-nav a[href="#home"]');
+    if (homeLink) homeLink.classList.add('active');
+}
+ 
+/* ----------------------------------------------------------------
+   PARTE C — Navbar PC com blur suave ao rolar
+   Aumenta opacidade do backdrop quando a página não está no topo
+---------------------------------------------------------------- */
+function initNavbarScroll() {
+    const navbar = document.querySelector('.pc-navbar');
+    if (!navbar) return;
+ 
+    const handleScroll = () => {
+        if (window.scrollY > 60) {
+            navbar.style.backdropFilter = 'blur(14px)';
+            navbar.style.background = 'linear-gradient(to right, #332419e8, #1d1916cc, #3d312b40, #a58578cc)';
+        } else {
+            navbar.style.backdropFilter = 'blur(8px)';
+            navbar.style.background = 'var(--nav-bg)';
+        }
+    };
+ 
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // chama uma vez ao carregar
+}
+ 
+/* ----------------------------------------------------------------
+   INICIALIZAÇÃO
+   Roda quando o DOM estiver pronto
+---------------------------------------------------------------- */
+document.addEventListener('DOMContentLoaded', () => {
+    initPCScrollSpy();
+    initMobileNavActive();
+    initNavbarScroll();
+});

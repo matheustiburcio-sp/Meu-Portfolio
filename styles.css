@@ -2,16 +2,16 @@
    VARIÁVEIS GLOBAIS — cores e tokens usados em todo o projeto
 ================================================================ */
 :root {
-    --bg: #1a1815;           /* Fundo principal do app mobile */
-    --bg-card: #201b16;      /* Fundo de cards e painéis */
-    --text-primary: #dbc7b5; /* Cor de texto principal */
+    --bg: #1a1815;
+    --bg-card: #201b16;
+    --text-primary: #dbc7b5;
     --text-secondary: #ffffff;
-    --accent: #c4b5a5;       /* Cor de destaque dourado-acinzentado */
-    --border: #584b3e91;     /* Bordas semi-transparentes */
+    --accent: #c4b5a5;
+    --border: #584b3e91;
 }
 
 /* ================================================================
-   RESET GLOBAL — remove margens/paddings padrão do browser
+   RESET GLOBAL
 ================================================================ */
 * {
     margin: 0;
@@ -21,16 +21,16 @@
 }
 
 /* ================================================================
-   BASE HTML/BODY — configuração do scroll e fundo global
+   BASE HTML/BODY
 ================================================================ */
 html {
   height: auto !important;
   overflow: auto !important;
   overflow-y: scroll;
-  scrollbar-width: none;       /* Firefox: oculta scrollbar */
-  -ms-overflow-style: none;   /* IE/Edge: oculta scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   scroll-behavior: smooth;
-  scroll-padding-top: 70px;   /* Compensa a navbar fixa no scroll */
+  scroll-padding-top: 70px;
 }
 
 html::-webkit-scrollbar {
@@ -58,7 +58,7 @@ body {
 }
 
 /* ================================================================
-   APP SHELL — container do layout mobile (simula tela de celular)
+   APP SHELL
 ================================================================ */
 .app-shell {
     width: 100vw;
@@ -82,7 +82,6 @@ body {
     }
 }
 
-/* Touch (celular real): remove borda/sombra decorativa do shell */
 @media (hover: none) and (pointer: coarse) {
     html,
     body {
@@ -99,7 +98,6 @@ body {
     }
 }
 
-/* Mouse em tela média: exibe o shell como moldura de celular */
 @media (min-width: 768px) and (hover: hover) and (pointer: fine) {
     .app-shell {
         max-width: 400px;
@@ -112,7 +110,7 @@ body {
 }
 
 /* ================================================================
-   NAVBAR MOBILE — barra de navegação superior (links + botões voltar/home)
+   NAVBAR MOBILE
 ================================================================ */
 .top-nav {
     display: flex;
@@ -157,14 +155,49 @@ body {
 .top-nav a {
     color: var(--text-secondary);
     text-decoration: none;
-    transition: color 0.3s;
     cursor: pointer;
     font-weight: 400;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s;
 }
 
-.top-nav a:hover,
+/* Underline animado que nasce do centro */
+.top-nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 100%;
+    height: 2px;
+    background: #c4a46a;
+    border-radius: 1px;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform-origin: center;
+}
+
+.top-nav a:hover {
+    color: #e8d5c0;
+}
+
+.top-nav a:hover::after {
+    transform: translateX(-50%) scaleX(0.6);
+}
+
 .top-nav a.active {
-    color: var(--text-primary);
+    color: #c4a46a;
+    font-weight: 700;
+}
+
+.top-nav a.active::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.top-nav a:focus-visible {
+    outline: 2px solid #c4a46a;
+    outline-offset: 4px;
+    border-radius: 3px;
 }
 
 .top-nav a.contact-edu-shift {
@@ -172,7 +205,7 @@ body {
 }
 
 /* ================================================================
-   ÁREA DE CONTEÚDO MOBILE — contêiner rolável que envolve todas as seções
+   ÁREA DE CONTEÚDO MOBILE
 ================================================================ */
 .main-content {
     flex: 1;
@@ -187,10 +220,10 @@ body {
 }
 
 /* ================================================================
-   SEÇÕES MOBILE — mostradas/ocultadas pelo JS via classe .active
+   SEÇÕES MOBILE
 ================================================================ */
 .page-section {
-    display: none;       /* Oculta por padrão */
+    display: none;
     min-height: 100%;
     background: #312B28;
     padding: 0 24px 20px;
@@ -273,14 +306,13 @@ body {
 }
 
 /* ================================================================
-   HOME MOBILE — título, avatar e card "sobre mim"
+   HOME MOBILE
 ================================================================ */
 #home {
     background: #1D1A15;
     padding: 0 24px 20px;
 }
 
-/* Título "FRONT-END / DEV" */
 .hero-title {
     padding-top: 10px;
     margin-bottom: 18px;
@@ -304,7 +336,6 @@ body {
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
 }
 
-/* Label "Sobre mim:" */
 .profile-subtitle {
     margin-bottom: 18px;
     text-align: center;
@@ -316,6 +347,7 @@ body {
 .about-card {
     background: #27231f;
     border: 1px solid rgb(124, 111, 101);
+    border-left: 3px solid #c4a46a;
     border-radius: 18px;
     padding: 22px;
 }
@@ -327,7 +359,7 @@ body {
 }
 
 /* ================================================================
-   HABILIDADES MOBILE — badge de título e cards com listas
+   HABILIDADES MOBILE
 ================================================================ */
 .section-header {
     margin-top: 10px;
@@ -390,7 +422,7 @@ body {
 }
 
 /* ================================================================
-   EDUCAÇÃO MOBILE — cards de instituição e citação
+   EDUCAÇÃO MOBILE
 ================================================================ */
 .edu-section-header {
     padding: 20px 0 14px;
@@ -569,7 +601,7 @@ body {
 }
 
 /* ================================================================
-   CONTATO MOBILE — lista de links clicáveis (WhatsApp, email, GitHub...)
+   CONTATO MOBILE
 ================================================================ */
 .contact-links {
     display: flex;
@@ -608,22 +640,10 @@ body {
     font-size: 15px;
 }
 
-.contact-link-icon.whatsapp {
-    color: #25d366;
-}
-
-.contact-link-icon.email {
-    color: #ea4335;
-}
-
-.contact-link-icon.github {
-    color: #fff;
-}
-
-.contact-link-icon.linkedin {
-    color: #0a66c2;
-}
-
+.contact-link-icon.whatsapp { color: #25d366; }
+.contact-link-icon.email    { color: #ea4335; }
+.contact-link-icon.github   { color: #fff; }
+.contact-link-icon.linkedin { color: #0a66c2; }
 .contact-link-icon.instagram {
     color: #fff;
     background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #bc1888);
@@ -641,7 +661,7 @@ body {
 }
 
 /* ================================================================
-   BOTÕES DE NAVEGAÇÃO MOBILE — "VOLTAR" e "AVANÇAR" entre seções
+   BOTÕES DE NAVEGAÇÃO MOBILE
 ================================================================ */
 .nav-actions {
     display: flex;
@@ -684,7 +704,7 @@ body {
 }
 
 /* ================================================================
-   PROJETOS MOBILE — grid de cards com thumbnail e detalhes
+   PROJETOS MOBILE
 ================================================================ */
 .projects-list {
     display: grid;
@@ -726,16 +746,45 @@ body {
 }
 
 .project-tag {
-    display: inline-block;
-    margin-top: 10px;
-    margin-right: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 8px;
+    margin-right: 6px;
     padding: 4px 10px;
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 12px;
-    color: var(--accent);
+    border-radius: 6px;
     font-family: "Space Mono", monospace;
     font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    line-height: 1;
+    background: rgba(255, 255, 255, 0.07);
+    color: var(--accent);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: filter 0.2s ease;
 }
+
+.project-tag:hover { filter: brightness(1.15); }
+
+.project-tag i {
+    font-size: 12px;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+/* ---- Cores por tecnologia (mobile + PC) ---- */
+.tech-html  { background: rgba(227,76,38,0.18); border-color: rgba(227,76,38,0.45); color: #ff9070; }
+.tech-css   { background: rgba(38,77,228,0.18);  border-color: rgba(38,77,228,0.45);  color: #7b9fff; }
+.tech-js    { background: rgba(240,219,79,0.18); border-color: rgba(240,219,79,0.45); color: #f0db4f; }
+.tech-react { background: rgba(97,218,251,0.15); border-color: rgba(97,218,251,0.4);  color: #61dafb; }
+.tech-ts    { background: rgba(49,120,198,0.2);  border-color: rgba(49,120,198,0.5);  color: #7eb3f5; }
+.tech-git   { background: rgba(240,80,50,0.16);  border-color: rgba(240,80,50,0.4);   color: #ff8470; }
+.tech-github{ background: rgba(200,200,200,0.1); border-color: rgba(200,200,200,0.25);color: #c8c8c8; }
+.tech-java  { background: rgba(248,152,32,0.16); border-color: rgba(248,152,32,0.4);  color: #f8b96e; }
+.tech-figma { background: rgba(162,89,255,0.16); border-color: rgba(162,89,255,0.4);  color: #c084fc; }
+.tech-uiux  { background: rgba(192,132,252,0.14);border-color: rgba(192,132,252,0.35);color: #d8b4fe; }
+.tech-supabase  { background: rgba(62,207,142,0.15); border-color: rgba(62,207,142,0.4);  color: #6ee7b7; }
+.tech-tailwind  { background: rgba(56,189,248,0.15); border-color: rgba(56,189,248,0.4);  color: #7dd3fc; }
 
 .project-links-mobile {
     display: flex;
@@ -759,7 +808,7 @@ body {
     color: #000;
 }
 
-/* Ajustes para telas muito pequenas (≤ 360px) */
+/* Telas muito pequenas */
 @media (max-width: 360px) {
     .top-nav {
         gap: 18px;
@@ -782,7 +831,7 @@ body {
     }
 }
 
-/* Acessibilidade: desativa animações para quem prefere menos movimento */
+/* Acessibilidade */
 @media (prefers-reduced-motion: reduce) {
     .page-section.entering,
     .page-section.entering * {
@@ -792,8 +841,7 @@ body {
 }
 
 /* ================================================================
-   LAYOUT PC — oculto por padrão, ativado em telas ≥ 900px
-   Cada seção (.pc-section) tem seu próprio fundo e altura de 100vh
+   LAYOUT PC — ativado em telas ≥ 900px
 ================================================================ */
 .pc-layout {
     display: none;
@@ -801,7 +849,6 @@ body {
 
 @media (min-width: 900px) {
 
-    /* Oculta o shell mobile e exibe o layout PC */
     .app-shell {
         display: none !important;
     }
@@ -813,22 +860,19 @@ body {
         scroll-padding-top: 70px;
     }
 
-    /* Restaura scroll natural e remove o fundo do body (cada seção PC tem o seu) */
     body {
         height: auto !important;
         overflow: visible !important;
         display: block !important;
         background: none;
     }
-   
-    /* Container raiz do layout desktop — ativa fontes e variáveis PC */
+
     .pc-layout {
         display: block;
         font-family: "Inria Serif", serif;
         color: #fff;
     }
 
-    /* Animações de reveal ao entrar na viewport (controlado pelo IntersectionObserver no script.js) */
     .animate-scroll,
     .animate-hero {
         opacity: 0;
@@ -842,7 +886,6 @@ body {
         transform: translateY(0);
     }
 
-    /* Variáveis PC */
     .pc-layout {
         --font-title: "Merriweather", serif;
         --font-ui: "Press Start 2P", cursive;
@@ -860,14 +903,13 @@ body {
         width: 100%;
     }
 
-    /* ---- Hero novo layout ---- */
-
+    /* ---- Hero ---- */
     .pc-hero {
         min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: url("assets/images/teste_4.png") center/cover no-repeat;s
+        background: url("assets/images/teste_4.png") center/cover no-repeat;
         padding: 100px 80px 60px;
     }
 
@@ -895,7 +937,7 @@ body {
         border: 1px solid rgba(255,255,255,0.2);
         border-radius: 999px;
         font-family: var(--font-ui);
-        font-size: 10px;
+        font-size: 9px; /* ↓ era 10px — Press Start 2P escala grande */
         color: #fff;
         background: rgba(255,255,255,0.06);
         letter-spacing: 1px;
@@ -913,12 +955,12 @@ body {
 
     @keyframes pulse-dot {
         0%, 100% { opacity: 1; }
-        50% { opacity: 0.4; }
+        50%       { opacity: 0.4; }
     }
 
     .pc-home-name {
         font-family: var(--font-title);
-        font-size: clamp(40px, 4.5vw, 68px);
+        font-size: clamp(36px, 4vw, 68px); /* ↓ mínimo menor */
         font-weight: 800;
         line-height: 1.1;
         color: #ffffff;
@@ -931,14 +973,27 @@ body {
 
     .pc-home-role {
         font-family: var(--font-ui);
-        font-size: 13px;
-        letter-spacing: 2px;
-        color: rgba(255,255,255,0.6);
+        font-size: clamp(9px, 1vw, 13px);
+        letter-spacing: 3px;
+        color: #c4a46a;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .pc-home-role::before,
+    .pc-home-role::after {
+        content: "";
+        display: inline-block;
+        width: 28px;
+        height: 1px;
+        background: rgba(196, 164, 106, 0.5);
+        flex-shrink: 0;
     }
 
     .pc-home-desc {
         font-family: var(--font-body);
-        font-size: clamp(15px, 1.2vw, 18px);
+        font-size: clamp(14px, 1.1vw, 18px); /* ↓ mínimo menor */
         line-height: 1.8;
         color: rgba(255,255,255,0.8);
         max-width: 520px;
@@ -993,7 +1048,7 @@ body {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 14px;
-        width: 280px;
+        width: clamp(220px, 22vw, 280px); /* ↓ encolhe em telas menores */
     }
 
     .pc-home-stat {
@@ -1001,7 +1056,7 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 18px 14px;
+        padding: 14px 10px; /* ↓ era 18px 14px */
         border-radius: 14px;
         background: rgba(255,255,255,0.06);
         border: 1px solid rgba(255,255,255,0.1);
@@ -1010,14 +1065,14 @@ body {
 
     .pc-home-stat-value {
         font-family: var(--font-title);
-        font-size: 24px;
+        font-size: clamp(18px, 2vw, 24px); /* ↓ era 24px fixo */
         font-weight: 800;
         color: #ffffff;
     }
 
     .pc-home-stat-label {
         font-family: var(--font-ui);
-        font-size: 9px;
+        font-size: clamp(7px, 0.7vw, 9px); /* ↓ era 9px fixo */
         letter-spacing: 1.2px;
         color: rgba(255,255,255,0.4);
     }
@@ -1026,26 +1081,26 @@ body {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
-        width: 280px;
+        gap: 8px;
+        width: clamp(220px, 22vw, 280px); /* ↓ acompanha o grid */
     }
 
     .pc-home-tags span {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        padding: 6px 14px;
+        padding: 5px 12px; /* ↓ era 6px 14px */
         border-radius: 999px;
         border: 1px solid rgba(255,255,255,0.18);
         background: rgba(255,255,255,0.05);
         font-family: var(--font-body);
-        font-size: 13px;
+        font-size: clamp(11px, 1vw, 13px); /* ↓ era 13px fixo */
         color: rgba(255,255,255,0.85);
     }
 
     .pc-home-tags span img {
-        width: 18px;
-        height: 18px;
+        width: 16px;
+        height: 16px;
         object-fit: contain;
         flex-shrink: 0;
     }
@@ -1054,20 +1109,18 @@ body {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 18px;
-        height: 18px;
+        width: 16px;
+        height: 16px;
         border-radius: 3px;
         background: #3178c6;
-        font-size: 9px;
+        font-size: 8px;
         font-weight: 800;
         color: #fff;
         font-family: sans-serif;
         flex-shrink: 0;
     }
 
-    /* ================================================================
-       PC NAVBAR — barra fixa no topo com links de navegação
-    ================================================================ */
+    /* ---- PC Navbar ---- */
     .pc-navbar {
         position: fixed;
         top: 0;
@@ -1077,7 +1130,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 24px 10px;
+        padding: 20px 10px; /* ↓ era 24px */
         background: var(--nav-bg);
         backdrop-filter: blur(8px);
     }
@@ -1085,25 +1138,64 @@ body {
     .pc-navbar-links {
         list-style: none;
         display: flex;
-        gap: 90px;
+        gap: clamp(40px, 6vw, 90px); /* ↓ era 90px fixo */
+    }
+
+    .pc-navbar-links li {
+        position: relative;
     }
 
     .pc-navbar-links a {
         font-family: var(--font-ui);
-        font-size: 15px;
-        color: var(--color-white);
+        font-size: clamp(9px, 0.9vw, 11px);
+        color: rgba(255, 255, 255, 0.65);
         text-decoration: none;
-        transition: color 0.3s, opacity 0.3s;
+        padding-bottom: 6px;
+        position: relative;
+        transition: color 0.3s ease;
+        letter-spacing: 0.5px;
+    }
+
+    /* Barra inferior com spring */
+    .pc-navbar-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%) scaleX(0);
+        width: 100%;
+        height: 2px;
+        background: #c4a46a;
+        border-radius: 1px;
+        transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        transform-origin: center;
     }
 
     .pc-navbar-links a:hover {
-        color: #c9a98a;
-        opacity: 0.92;
+        color: #e8d5c0;
+        opacity: 1;
     }
 
-    /* ================================================================
-       PC LAYOUT CONTATO — estrutura flex usada na seção de contato
-    ================================================================ */
+    .pc-navbar-links a:hover::after {
+        transform: translateX(-50%) scaleX(0.5);
+    }
+
+    .pc-navbar-links a.active {
+        color: #c4a46a;
+        opacity: 1;
+    }
+
+    .pc-navbar-links a.active::after {
+        transform: translateX(-50%) scaleX(1);
+    }
+
+    .pc-navbar-links a:focus-visible {
+        outline: 2px solid #c4a46a;
+        outline-offset: 4px;
+        border-radius: 3px;
+    }
+
+    /* ---- PC Layout Contato ---- */
     .pc-page-layout {
         display: flex;
         flex-direction: row;
@@ -1131,51 +1223,17 @@ body {
         gap: 20px;
     }
 
-
-
-    .pc-meu-nome .text-wrapper {
-        position: absolute;
-        top: 88px;
-        left: 69px;
-        width: 794px;
-        font-family: var(--font-title);
-        font-weight: 900;
-        color: #463d3d00;
-        font-size: 70px;
-    }
-
-    .pc-sobre-mim .text-wrapper {
-        position: absolute;
-        top: clamp(100px, 10vw, 150px);
-        left: clamp(40px, 5vw, 100px);
-        font-family: var(--font-ui);
-        font-weight: 300;
-        color: #09c6ff;
-        font-size: clamp(28px, 3.5vw, 50px);
-    }
-
- 
-    }
-
-    .pc-hero-actions {
-        position: absolute;
-        top: clamp(520px, 46vw, 650px);
-        left: clamp(40px, 5vw, 90px);
-        display: flex;
-        gap: 14px;
-        flex-wrap: wrap;
-    }
-
+    /* ---- Botões primário/secundário ---- */
     .pc-btn-primary,
     .pc-btn-secondary {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-height: 48px;
-        padding: 12px 20px;
+        min-height: 44px; /* ↓ era 48px */
+        padding: 10px 18px; /* ↓ era 12px 20px */
         border-radius: 12px;
         font-family: var(--font-ui);
-        font-size: 11px;
+        font-size: clamp(9px, 0.8vw, 11px); /* ↓ era 11px fixo */
         letter-spacing: 0.4px;
         text-decoration: none;
         transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
@@ -1199,9 +1257,7 @@ body {
         filter: brightness(1.06);
     }
 
-    /* ================================================================
-       PC PROJETOS — grade de cards de projeto
-    ================================================================ */
+    /* ---- PC Projetos ---- */
     .pc-projects-section {
         min-height: 100vh;
         width: 100%;
@@ -1212,9 +1268,9 @@ body {
     .pc-projects-title {
         text-align: center;
         font-family: var(--font-ui);
-        font-size: 48px;
+        font-size: clamp(24px, 3vw, 48px); /* ↓ era 48px fixo */
         color: var(--color-title);
-        margin-bottom: 162px;
+        margin-bottom: clamp(60px, 10vw, 162px); /* ↓ era 162px fixo */
     }
 
     .pc-projects-grid {
@@ -1226,69 +1282,141 @@ body {
     }
 
     .pc-project-card {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        min-height: 360px;
-        padding: 30px 24px;
+        min-height: 320px;
+        padding: clamp(20px, 2vw, 28px) clamp(16px, 2vw, 24px);
         border-radius: 18px;
         background: linear-gradient(to right, #2b201aa3, #241a1594, #3a2a225c);
         border: 1px solid #d4a57a36;
         box-shadow: var(--shadow-soft);
+        transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .pc-project-card:hover {
+        border-color: rgba(212, 165, 122, 0.55);
+        transform: translateY(-3px);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Número discreto no canto — adicione data-index="01" no <article> */
+    .pc-project-card::before {
+        content: attr(data-index);
+        position: absolute;
+        top: 18px;
+        right: 22px;
+        font-family: var(--font-ui);
+        font-size: 10px;
+        color: rgba(212, 165, 122, 0.3);
+        letter-spacing: 1px;
     }
 
     .pc-project-card h3 {
         font-family: var(--font-title);
         color: #fff8f1;
-        font-size: 28px;
-        margin-bottom: 14px;
+        font-size: clamp(17px, 1.8vw, 24px);
+        margin-bottom: 10px;
+        line-height: 1.2;
+    }
+
+    /* Linha dourada fina após o título */
+    .pc-project-card h3::after {
+        content: "";
+        display: block;
+        width: 28px;
+        height: 2px;
+        background: #c4a46a;
+        border-radius: 1px;
+        margin-top: 10px;
+        opacity: 0.6;
     }
 
     .pc-project-card p {
         font-family: var(--font-body);
-        font-size: 18px;
-        line-height: 30px;
-        color: #f0e2d4;
-        margin-bottom: 22px;
+        font-size: clamp(13px, 1.1vw, 16px);
+        line-height: 1.75;
+        color: rgba(240, 226, 212, 0.85);
+        margin-bottom: 18px;
+        flex: 1;
     }
 
     .pc-project-tags {
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
-        margin-bottom: 22px;
+        margin-bottom: 18px;
     }
 
     .pc-project-tags span {
-        padding: 6px 10px;
-        border-radius: 999px;
-        background: #d4a57a2b;
-        border: 1px solid #d4a57a61;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 12px;
+        border-radius: 6px;
+        font-family: "Space Mono", monospace;
+        font-size: clamp(9px, 0.8vw, 11px);
+        font-weight: 700;
+        letter-spacing: 0.4px;
+        line-height: 1;
+        background: rgba(255,255,255,0.07);
+        border: 1px solid rgba(255,255,255,0.15);
         color: #f7ece0;
-        font-family: var(--font-body);
-        font-size: 14px;
+        transition: filter 0.2s ease, transform 0.2s ease;
     }
+
+    .pc-project-tags span:hover {
+        filter: brightness(1.2);
+        transform: translateY(-1px);
+    }
+
+    .pc-project-tags span i {
+        font-size: 13px;
+        flex-shrink: 0;
+    }
+
+    /* Classes .tech-* definidas no bloco global funcionam aqui também */
 
     .pc-project-links {
         display: flex;
-        gap: 18px;
+        gap: 20px;
         flex-wrap: wrap;
+        align-items: center;
+        padding-top: 14px;
+        border-top: 1px solid rgba(212, 165, 122, 0.15);
     }
 
     .pc-project-links a {
-        color: #f3c79f;
+        color: #d4a57a;
         text-decoration: none;
         font-family: var(--font-ui);
-        font-size: 10px;
+        font-size: clamp(8px, 0.7vw, 10px);
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        letter-spacing: 0.5px;
+        transition: color 0.25s ease, gap 0.25s ease;
+    }
+
+    .pc-project-links a::after {
+        content: "→";
+        font-family: sans-serif;
+        font-size: 11px;
+        transition: transform 0.25s ease;
+        display: inline-block;
     }
 
     .pc-project-links a:hover {
-        text-decoration: underline;
+        color: #f3c79f;
+        gap: 8px;
     }
 
-    /* ================================================================
-       PC EDUCAÇÃO — cards de instituição em grid horizontal
-    ================================================================ */
+    .pc-project-links a:hover::after {
+        transform: translateX(3px);
+    }
+
+    /* ---- PC Educação ---- */
     .pc-education-section {
         position: relative;
         min-height: 100vh;
@@ -1333,7 +1461,7 @@ body {
     }
 
     .pc-edu-img-wrap {
-        flex: 0 0 260px;
+        flex: 0 0 220px; /* ↓ era 260px */
         overflow: hidden;
         background: #111;
     }
@@ -1341,7 +1469,7 @@ body {
     .pc-edu-img {
         width: 100%;
         height: 100%;
-        min-height: 260px;
+        min-height: 220px; /* ↓ era 260px */
         object-fit: cover;
         display: block;
     }
@@ -1354,28 +1482,28 @@ body {
 
     .pc-edu-card-info {
         flex: 1;
-        padding: 24px 22px;
+        padding: 20px 18px; /* ↓ era 24px 22px */
         display: flex;
         flex-direction: column;
         gap: 10px;
     }
 
     .pc-edu-badge {
-        width: 44px;
-        height: 44px;
+        width: 40px; /* ↓ era 44px */
+        height: 40px;
         border-radius: 50%;
         border: 1px solid rgba(196, 164, 106, 0.5);
         display: flex;
         align-items: center;
         justify-content: center;
         color: #c4a46a;
-        font-size: 18px;
+        font-size: 16px; /* ↓ era 18px */
         flex-shrink: 0;
     }
 
     .pc-edu-name {
         font-family: var(--font-title);
-        font-size: 22px;
+        font-size: clamp(16px, 1.6vw, 22px); /* ↓ era 22px fixo */
         font-weight: 900;
         color: #ffffff;
         text-transform: uppercase;
@@ -1385,7 +1513,7 @@ body {
 
     .pc-edu-type {
         font-family: var(--font-body);
-        font-size: 14px;
+        font-size: clamp(12px, 1vw, 14px); /* ↓ era 14px fixo */
         color: #c4a46a;
         margin: 0;
     }
@@ -1399,7 +1527,7 @@ body {
 
     .pc-edu-desc {
         font-family: var(--font-body);
-        font-size: 14px;
+        font-size: clamp(12px, 1vw, 14px); /* ↓ era 14px fixo */
         color: rgb(255, 255, 255);
         line-height: 1.65;
         margin: 0;
@@ -1409,11 +1537,11 @@ body {
         display: flex;
         align-items: center;
         gap: 10px;
-        padding: 12px 22px;
+        padding: 12px 18px;
         border-top: 1px solid rgba(255, 255, 255, 0.07);
         background: rgba(255, 255, 255, 0.02);
         font-family: var(--font-body);
-        font-size: 13px;
+        font-size: clamp(11px, 1vw, 13px); /* ↓ era 13px fixo */
         color: rgb(255, 255, 255);
     }
 
@@ -1432,12 +1560,12 @@ body {
         display: flex;
         align-items: center;
         gap: 18px;
-        margin-bottom: -100px;
+        margin-bottom: clamp(-40px, -6vw, -100px); /* ↓ era -100px fixo */
         padding: 14px 0;
         border-top: 1px solid rgba(255, 255, 255, 0.08);
         width: min(1100px, 100%);
         font-family: var(--font-body);
-        font-size: 15px;
+        font-size: clamp(13px, 1.1vw, 15px); /* ↓ era 15px fixo */
         color: rgb(255, 255, 255);
         font-weight: 700;
         font-style: italic;
@@ -1445,48 +1573,42 @@ body {
 
     .pc-edu-quote i {
         color: #c4a46a;
-        font-size: 26px;
+        font-size: 24px; /* ↓ era 26px */
         flex-shrink: 0;
     }
 
+    .pc-education-section .edu-section-header {
+    max-width: 1000px;
+    width: 100%;
+    padding: 0 0 8px;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(140px, 20vh, 120px); /* controla o espaço entre título e subtítulo */
+}
+
     .pc-education-section .edu-section-title {
-        font-size: 48px;
-        color: var(--color-title);
-    }
+    font-size: clamp(24px, 3vw, 48px);
+    color: var(--color-title);
+    margin-top: 0;
+    margin-bottom: 0;
+    transform: translateY(-50px); /* sobe 50px sem afetar o fluxo dos elementos abaixo */
+}
+}
 
     .pc-education-section .edu-section-subtitle {
-        font-size: 17px;
-        margin-top: 150px;
-        color: #ffffff;
-        font-weight: 700;
-        font-style: italic;
-    }
+    font-size: clamp(13px, 1.2vw, 17px);
+    margin-top: 0;
+    color: #ffffff;
+    font-weight: 700;
+    font-style: italic;
+}
 
-    .pc-education-section .edu-section-header {
-        max-width: 1000px;
-        padding: 0 0 8px;
-        margin-top: -120px;
-    }
-
-    /* ================================================================
-       PC CONTATO — seção centralizada com box de informações
-    ================================================================ */
-    .pc-contato1 {
-        position: absolute;
-        top: 90px;
-        left: 0;
-        right: 0;
-        text-align: center;
-        font-family: var(--font-ui);
-        font-size: clamp(28px, 4vw, 60px);
-        color: var(--color-title);
-        font-weight: 400;
-        white-space: normal;
-        padding: 0 20px;
-        pointer-events: none;
-    }
-
+    /* ---- PC Contato ---- */
     .pc-contact-section {
+        position: relative;
         height: 100vh;
         width: 100vw;
         overflow: hidden;
@@ -1496,6 +1618,21 @@ body {
         background: url("assets/images/imagem.baixo.png") top/cover no-repeat;
     }
 
+    .pc-contato1 {
+        position: absolute;
+        top: clamp(60px, 8vh, 90px);
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-family: var(--font-ui);
+        font-size: clamp(20px, 3vw, 48px);
+        color: var(--color-title);
+        font-weight: 400;
+        white-space: normal;
+        padding: 0 20px;
+        pointer-events: none;
+    }
+
     .pc-contact-section .pc-page-layout {
         justify-content: center;
     }
@@ -1503,8 +1640,8 @@ body {
     .pc-contact-box {
         display: flex;
         flex-direction: column;
-        gap: 20px;
-        padding: 40px 50px;
+        gap: clamp(14px, 1.5vw, 20px); /* ↓ era 20px fixo */
+        padding: clamp(24px, 3vw, 40px) clamp(28px, 4vw, 50px); /* ↓ era 40px 50px fixo */
         border-radius: 20px;
         background: var(--panel-strong);
     }
@@ -1515,48 +1652,69 @@ body {
         align-items: center;
         gap: 14px;
         font-family: var(--font-body);
-        font-size: 20px;
+        font-size: clamp(14px, 1.2vw, 18px);
         color: var(--color-white);
+        padding-bottom: 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .pc-contact-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .pc-contact-item strong {
+        color: rgba(196, 164, 106, 0.8);
+        font-weight: 600;
+        min-width: 80px;
+        display: inline-block;
     }
 
     .pc-contact-item a {
         color: var(--color-link);
         text-decoration: none;
         word-break: break-word;
+        transition: color 0.25s, text-underline-offset 0.25s;
     }
 
     .pc-contact-item a:hover {
+        color: #f3c79f;
         text-decoration: underline;
+        text-underline-offset: 3px;
     }
 
     .pc-contact-icon {
-        width: 28px;
-        height: 28px;
+        width: clamp(22px, 2vw, 28px); /* ↓ era 28px fixo */
+        height: clamp(22px, 2vw, 28px);
         object-fit: contain;
         flex-shrink: 0;
     }
 
-    /* Ajustes para notebooks com resolução até 1366px */
+    /* Notebooks até 1366px */
     @media (max-width: 1366px) {
         .pc-navbar {
-            padding: 16px 14px;
+            padding: 14px 12px;
         }
 
         .pc-navbar-links {
-            gap: 48px;
+            gap: clamp(30px, 4vw, 48px);
         }
 
         .pc-navbar-links a {
-            font-size: 12px;
-        }
-
-        .pc-projects-title {
-            font-size: 40px;
+            font-size: clamp(8px, 0.75vw, 10px);
         }
 
         .pc-projects-grid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
     }
-}
 
+    /* Reduz motion quando preferido */
+    @media (prefers-reduced-motion: reduce) {
+        .pc-navbar-links a::after,
+        .pc-project-card,
+        .pc-project-links a::after {
+            transition: none !important;
+        }
+    }
+}

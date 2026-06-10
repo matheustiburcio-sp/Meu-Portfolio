@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Matheus Tiburcio - Front-End Developer (PC)</title>
     <link rel="stylesheet" href="styles.css" />
+    <!-- Devicons: ícones oficiais de tecnologias -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,7 +21,6 @@
           display: block;
           overflow-y: auto !important;
         }
-        /* Garante que todo conteúdo PC seja visível */
         .pc-layout .pc-section,
         .pc-layout .pc-home-inner,
         .pc-layout .pc-home-left,
@@ -33,6 +34,10 @@
     </style>
   </head>
   <body class="pc-layout">
+
+    <!-- ============================================================
+         NAVBAR PC
+    ============================================================ -->
     <nav class="pc-navbar">
       <ul class="pc-navbar-links">
         <li><a href="#hero">Inicio</a></li>
@@ -42,26 +47,37 @@
       </ul>
     </nav>
 
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
     <section class="pc-section pc-hero" id="hero">
       <div class="pc-home-inner">
+
         <div class="pc-home-left">
           <div class="pc-home-badge">
             <span class="pc-home-badge-dot"></span>
             DISPONÍVEL PARA PROJETOS
           </div>
+
           <h1 class="pc-home-name">Matheus<br>Tiburcio<span class="pc-home-name-dot">.</span></h1>
+
+          <!-- role agora com linhas decorativas via CSS -->
           <p class="pc-home-role">FRONT-END DEVELOPER</p>
+
           <p class="pc-home-desc">Estudante de ADS com foco em interfaces responsivas e funcionais. Transformo ideias em código limpo e experiências de usuário que fazem sentido.</p>
+
           <div class="pc-home-actions">
             <a class="pc-btn-primary" href="#projetos">Ver projetos</a>
             <a class="pc-btn-secondary" href="#contato">Fale comigo</a>
           </div>
         </div>
+
         <div class="pc-home-right">
           <div class="pc-home-avatar-wrap">
             <img src="assets/images/avatar.jpg" alt="Matheus Tiburcio" class="pc-home-avatar-img" />
             <span class="pc-home-avatar-status"></span>
           </div>
+
           <div class="pc-home-stats-grid">
             <div class="pc-home-stat">
               <span class="pc-home-stat-value">5+</span>
@@ -80,28 +96,37 @@
               <span class="pc-home-stat-label">SÃO PAULO</span>
             </div>
           </div>
+
+          <!-- Tags com ícones Devicons -->
           <div class="pc-home-tags">
-            <span><img src="imagens/react.svg" alt="React" />React</span>
-            <span><span class="pc-tag-ts">TS</span>TypeScript</span>
-            <span><img src="imagens/html5k.webp" alt="HTML" />HTML/CSS</span>
-            <span><img src="imagens/java4k.webp" alt="JavaScript" />JavaScript</span>
-            <span><img src="imagens/figma.png" alt="Figma" />Figma</span>
-            <span><img src="imagens/java.png" alt="Java" />Java</span>
+            <span class="tech-react"><i class="devicon-react-original"></i> React</span>
+            <span class="tech-ts"><span class="pc-tag-ts">TS</span> TypeScript</span>
+            <span class="tech-html"><i class="devicon-html5-plain"></i> HTML/CSS</span>
+            <span class="tech-js"><i class="devicon-javascript-plain"></i> JavaScript</span>
+            <span class="tech-figma"><i class="devicon-figma-plain"></i> Figma</span>
+            <span class="tech-java"><i class="devicon-java-plain"></i> Java</span>
           </div>
         </div>
+
       </div>
     </section>
 
+    <!-- ============================================================
+         PROJETOS
+    ============================================================ -->
     <section class="pc-section pc-projects-section animate-scroll" id="projetos">
       <div class="pc-projects-title"><span>PROJETOS:</span></div>
+
       <div class="pc-projects-grid">
-        <article class="pc-project-card">
+
+        <!-- data-index ativa o número discreto no canto do card -->
+        <article class="pc-project-card" data-index="01">
           <h3>Portfolio Profissional</h3>
           <p>Site pessoal com foco em identidade visual, navegacao simples, animacoes de entrada e layout responsivo para desktop e celular.</p>
           <div class="pc-project-tags">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
+            <span class="tech-html"><i class="devicon-html5-plain"></i> HTML</span>
+            <span class="tech-css"><i class="devicon-css3-plain"></i> CSS</span>
+            <span class="tech-js"><i class="devicon-javascript-plain"></i> JavaScript</span>
           </div>
           <div class="pc-project-links">
             <a href="https://matheustiburcio-sp.github.io/Meu-Portfolio/" target="_blank" rel="noopener noreferrer">Ver online</a>
@@ -109,60 +134,64 @@
           </div>
         </article>
 
-        <article class="pc-project-card">
+        <article class="pc-project-card" data-index="02">
           <h3>Landing Page Responsiva</h3>
           <p>Pagina institucional com hierarquia visual clara, componentes reutilizaveis e ajuste de layout para diferentes resolucoes.</p>
           <div class="pc-project-tags">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>UI/UX</span>
+            <span class="tech-html"><i class="devicon-html5-plain"></i> HTML</span>
+            <span class="tech-css"><i class="devicon-css3-plain"></i> CSS</span>
+            <span class="tech-uiux">✦ UI/UX</span>
           </div>
           <div class="pc-project-links">
             <a href="https://github.com/matheustiburcio-sp" target="_blank" rel="noopener noreferrer">Ver repositorios</a>
           </div>
         </article>
 
-        <article class="pc-project-card">
+        <article class="pc-project-card" data-index="03">
           <h3>Desafios de Logica e Front-end</h3>
           <p>Exercicios e pequenos projetos para praticar estrutura de paginas, manipulacao de elementos e boas praticas de desenvolvimento.</p>
           <div class="pc-project-tags">
-            <span>JavaScript</span>
-            <span>Git</span>
-            <span>GitHub</span>
+            <span class="tech-js"><i class="devicon-javascript-plain"></i> JavaScript</span>
+            <span class="tech-git"><i class="devicon-git-plain"></i> Git</span>
+            <span class="tech-github"><i class="devicon-github-original"></i> GitHub</span>
           </div>
           <div class="pc-project-links">
             <a href="https://github.com/matheustiburcio-sp" target="_blank" rel="noopener noreferrer">Ver GitHub</a>
           </div>
         </article>
 
-        <article class="pc-project-card">
+        <article class="pc-project-card" data-index="04">
           <h3>EduConnect2</h3>
           <p>Plataforma educacional desenvolvida para conectar alunos e professores, facilitando o acesso a conteudos e a comunicacao entre os usuarios.</p>
           <div class="pc-project-tags">
-            <span>React</span>
-            <span>JavaScript</span>
-            <span>GitHub</span>
+            <span class="tech-react"><i class="devicon-react-original"></i> React</span>
+            <span class="tech-js"><i class="devicon-javascript-plain"></i> JavaScript</span>
+            <span class="tech-github"><i class="devicon-github-original"></i> GitHub</span>
           </div>
           <div class="pc-project-links">
             <a href="https://github.com/matheustiburcio-sp/educonnect2" target="_blank" rel="noopener noreferrer">Codigo</a>
           </div>
         </article>
 
-        <article class="pc-project-card">
+        <article class="pc-project-card" data-index="05">
           <h3>Saber Aberto Web</h3>
           <p>Aplicacao web com foco em compartilhamento de conhecimento de forma aberta e acessivel, promovendo o aprendizado colaborativo.</p>
           <div class="pc-project-tags">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
+            <span class="tech-html"><i class="devicon-html5-plain"></i> HTML</span>
+            <span class="tech-css"><i class="devicon-css3-plain"></i> CSS</span>
+            <span class="tech-js"><i class="devicon-javascript-plain"></i> JavaScript</span>
           </div>
           <div class="pc-project-links">
             <a href="https://github.com/matheustiburcio-sp/saber-aberto-web" target="_blank" rel="noopener noreferrer">Codigo</a>
           </div>
         </article>
+
       </div>
     </section>
 
+    <!-- ============================================================
+         EDUCAÇÃO
+    ============================================================ -->
     <section class="pc-section pc-education-section animate-scroll" id="educacao">
       <div class="edu-section-header">
         <h2 class="edu-section-title">EDUCAÇÃO</h2>
@@ -170,6 +199,7 @@
       </div>
 
       <div class="pc-edu-cards-grid">
+
         <article class="pc-edu-card animate-scroll">
           <div class="pc-edu-card-body">
             <div class="pc-edu-img-wrap">
@@ -207,6 +237,7 @@
             <span><strong class="pc-edu-foot-label">Conclusão:</strong> 2028 (ADS)</span>
           </div>
         </article>
+
       </div>
 
       <div class="pc-edu-quote">
@@ -215,37 +246,46 @@
       </div>
     </section>
 
+    <!-- ============================================================
+         CONTATO
+    ============================================================ -->
     <section class="pc-section pc-contact-section animate-scroll" id="contato">
       <div class="pc-contato1">CONTATO:</div>
       <div class="pc-page-layout">
         <div class="pc-page-left"></div>
         <div class="pc-page-center">
           <div class="pc-contact-box">
+
             <div class="pc-contact-item">
               <img src="imagens/telefone.webp" alt="Telefone" class="pc-contact-icon" />
-              <p><strong>Telefone:</strong> <a href="tel:+5511964159465">(11)96415-9465</a></p>
+              <p><strong>Telefone:</strong> <a href="tel:+5511964159465">(11) 96415-9465</a></p>
             </div>
+
             <div class="pc-contact-item">
               <img src="imagens/gmail.png" alt="Email" class="pc-contact-icon" />
               <p><strong>Email:</strong> <a href="mailto:matheus.tiburzio@gmail.com">matheus.tiburzio@gmail.com</a></p>
             </div>
+
             <div class="pc-contact-item">
               <img src="imagens/github.png" alt="GitHub" class="pc-contact-icon" />
               <p><strong>GitHub:</strong>
                 <a href="https://github.com/matheustiburcio-sp" target="_blank" rel="noopener noreferrer">github.com/matheustiburcio-sp</a>
               </p>
             </div>
+
             <div class="pc-contact-item">
               <img src="imagens/github.png" alt="Portfolio" class="pc-contact-icon" />
               <p><strong>Portfolio:</strong>
                 <a href="https://matheustiburcio-sp.github.io/Meu-Portfolio/" target="_blank" rel="noopener noreferrer">matheustiburcio-sp.github.io/Meu-Portfolio</a>
               </p>
             </div>
+
           </div>
         </div>
         <div class="pc-page-right"></div>
       </div>
     </section>
+
     <script src="script.js"></script>
   </body>
 </html>
